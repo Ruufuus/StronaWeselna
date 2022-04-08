@@ -6,12 +6,12 @@
 }
 
 body {
-    margin: 0;
     background-color: #fffde9;
-
 }
 
 
+
+/* kwiatki */
 .flowersContainerLeft {
     position: fixed;
     top: 0;
@@ -31,20 +31,19 @@ body {
     z-index: 10;
 }
 
-
-
 .flowersLeft {
     display: block;
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     margin: 0;
 }
 
 .flowersRight {
     position: absolute;
+    right: 0;
     bottom: 0;
     display: block;
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     margin: 0;
     
@@ -52,6 +51,7 @@ body {
 
 
 
+/* tytuł i nawbar */
 .title {
     position: relative;
     width: 100%;
@@ -82,21 +82,6 @@ h1 {
     
 }
 
-/* .menu {
-    animation: cienie 5s linear 2s infinite alternate;
-}
-
-@keyframes cienie {
-    0% {
-        box-shadow: 0px 0px 21px -34px rgba(66, 68, 90, 1);
-    }
-
-    100% {
-        box-shadow: 0px 25px 21px -14px rgba(66, 68, 90, 1);
-    }
-} */
-
-
 .menu ul {
     display: flex;
     list-style-type: none;
@@ -122,12 +107,14 @@ h1 {
 
 
 
+/* ustawienia sekcji */
 .sectionContainer {
     position: relative;
     left: 0px;
     width: auto;
     min-height: 100vh;
-    margin: 0 15vw 0 15vw;
+    margin: 0vh 15vw 0 15vw;
+    padding: 6vh 0;
     float: left;
 }
 
@@ -145,6 +132,231 @@ h1 {
         background-color: red;
     }
 }
+
+
+
+/* sekcja 1 */
+#Slub {
+    background-color: red;
+}
+
+
+
+/* sekcja 2 */
+#Wesele {
+    background-color: yellow;
+}
+
+
+
+/* sekcja 3 */
+#PlanWesela {
+    background-color: green;
+}
+
+
+
+/* sekcja 4 */
+.roomContainer {
+    position: relative;
+    left: 0px;
+    width: 70vw;
+
+    height: auto;
+    margin: 0vh 15vw 0 15vw;
+    background-color: red;
+}
+
+
+@media (max-width: 500px) {
+    .roomContainer {
+        margin: 3vh 0 0 0;
+    }
+}
+
+.table {
+    background-color: blue;
+    position: relative;
+    display: grid;
+}
+
+.bossTable {
+    margin: 5vh 30%;
+    width: auto;
+    height: 10vh;
+}
+
+
+.guestContainer {  
+    position: relative;
+    display: flex;
+    width: 70vw;
+    height: auto;
+    padding: 5vh 0;
+    justify-content: space-evenly;
+    background-color: yellow;
+}
+
+.guestTable {
+    width: 20vw;
+    height: auto;
+
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(auto, auto);
+    grid-column-gap: 5px;
+    grid-row-gap: 13px;
+}
+.guestTable p2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-weight: 100;
+    opacity: 0.3;
+    font-size: 1.2rem;
+}
+
+.guestTable .checkOn {
+    color: black;
+    font-weight: 600;
+    opacity: 1;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px rgba(206,206,206,0.92);
+    font-family: 'Kanit', sans-serif;
+}
+
+.tableTable {
+    grid-area: 1 / 2 / 25 / 4;
+    background-color: brown;
+}
+
+.bossTable p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.arrow{
+    position: absolute;
+    top: 15vh;
+    right: -1vw;
+
+    color: black;
+    font-weight: 600;
+    opacity: 1;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px rgba(206,206,206,0.92);
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.3rem;
+}
+
+.guestSerchBar {
+    position: absolute;
+    top: 4vh;
+    right: -13vw;
+    height: 400px;
+    width: 200px;
+    overflow-y: scroll;
+    z-index: 20;
+    border: 2px solid #ccc;
+}
+
+.seatHTML2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.seatHTML3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.seatHTML4 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+.seatHTML5 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+.seatHTML6 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+.seatHTML7 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+.seatHTML8 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+.seatHTML9 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+.seatHTML10 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+.seatHTML11 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+.seatHTML12 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+.seatHTML13 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+.seatHTML14 {
+    grid-area: 14 / 1 / 15 / 2;
+}
+.seatHTML15 {
+    grid-area: 15 / 1 / 16 / 2;
+}
+.seatHTML16 {
+    grid-area: 16 / 1 / 17 / 2;
+}
+.seatHTML17 {
+    grid-area: 17 / 1 / 18 / 2;
+}
+.seatHTML18 {
+    grid-area: 18 / 1 / 19 / 2;
+}
+.seatHTML19 {
+    grid-area: 19 / 1 / 20 / 2;
+}
+.seatHTML20 {
+    grid-area: 20 / 1 / 21 / 2;
+}
+.seatHTML21 {
+    grid-area: 21 / 1 / 22 / 2;
+}
+.seatHTML22 {
+    grid-area: 22 / 1 / 23 / 2;
+}
+.seatHTML23 {
+    grid-area: 23 / 1 / 24 / 2;
+}
+.seatHTML24 {
+    grid-area: 24 / 1 / 25 / 2;
+}
+
+
+
+
+/* sekcja 5 */
+#Organizacja {
+    background-color: purple;
+}
+
+
+
+/* sekcja 6 */
+#Zdjęcia {
+    background-color: orange;
+}
+
+
+
+/* sekcja 7 */
+#Kontakt {
+    background-color: lightblue;
+}
+
+
 
 .clear {
     clear: both;
