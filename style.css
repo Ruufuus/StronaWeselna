@@ -116,7 +116,7 @@ h1 {
     position: relative;
     left: 0px;
     width: auto;
-    min-height: 100vh;
+    height: auto;
     margin: 0vh 15vw 0 15vw;
     padding: 6vh 0;
     float: left;
@@ -142,8 +142,14 @@ h1 {
 /* sekcja 1 */
 #Slub {
     background-color: red;
+   
 }
 
+h3 {
+    text-align: center;
+    font-size: 5rem;
+
+}
 
 
 /* sekcja 2 */
@@ -182,6 +188,7 @@ h1 {
     background-color: blue;
     position: relative;
     display: grid;
+    justify-items: center
 }
 
 .bossTable {
@@ -206,21 +213,30 @@ h1 {
     height: auto;
 
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(auto, auto);
+    grid-template-rows: 50px;
     grid-column-gap: 5px;
     grid-row-gap: 13px;
+
 }
-.guestTable p2 {
+
+
+.guestTable span {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: gray;
+    
     font-weight: 100;
-    opacity: 0.3;
+    opacity: 0.7;
     font-size: 1.2rem;
 }
 
-.guestTable .checkOn {
+.guestTable span p2 {
+    color: gray;
+    opacity: 0.3;
+}
+
+.guestTable .checkOn,
+.guestTable .checkOn p2 {
     color: black;
     font-weight: 600;
     opacity: 1;
@@ -229,9 +245,16 @@ h1 {
     font-family: 'Kanit', sans-serif;
 }
 
+.guestTable .checkOn p2 {
+    z-index: 20;
+}
+
 .tableTable {
-    grid-area: 1 / 2 / 25 / 4;
+    grid-area: 1 / 2 / 26 / 4;
     background-color: brown;
+    width: 100%;
+    border-radius: 50px;
+    border: 2px solid black;
 }
 
 .bossTable p {
@@ -241,6 +264,61 @@ h1 {
     color: black;
     font-weight: 900;
     font-size: 20px;
+}
+
+.guestSerchBar {
+    position: absolute;
+    top: 4vh;
+    right: -13vw;
+    height: 400px;
+    width: 200px;
+    overflow-y: scroll;
+    z-index: 20;
+    border: 2px solid #ccc;
+}
+
+.chairLeft {
+    position: relative;
+    height: 50px;
+    width: 55px;
+    background-color: #841010;
+    opacity: 1;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid black;
+}
+
+.chairLeft:before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    height: 48px;
+    width: 8px;
+    background-color: #690F0F;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.chairRight {
+    position: relative;
+    height: 50px;
+    width: 55px;
+    background-color: #841010;
+    opacity: 1;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 2px solid black;
+}
+
+.chairRight:after {
+    content: "";
+    position: absolute;
+    right: -9px;
+    height: 48px;
+    width: 8px;
+    background-color: #690F0F;
+    border-radius: 5px;
+    border: 2px solid black;
 }
 
 .arrow{
@@ -257,17 +335,9 @@ h1 {
     font-size: 1.3rem;
 }
 
-.guestSerchBar {
-    position: absolute;
-    top: 4vh;
-    right: -13vw;
-    height: 400px;
-    width: 200px;
-    overflow-y: scroll;
-    z-index: 20;
-    border: 2px solid #ccc;
-}
 
+
+/* stół 1 */
 .seatHTML2 {
     grid-area: 2 / 1 / 3 / 2;
 }
@@ -337,7 +407,157 @@ h1 {
 .seatHTML24 {
     grid-area: 24 / 1 / 25 / 2;
 }
+.seatHTML25 {
+    grid-area: 25 / 1 / 26 / 2;
+}
 
+/* stół 2 */
+.seatHTML52 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.seatHTML53 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.seatHTML54 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+.seatHTML55 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+.seatHTML56 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+.seatHTML57 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+.seatHTML58 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+.seatHTML59 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+.seatHTML60 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+.seatHTML61 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+.seatHTML62 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+.seatHTML63 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+.seatHTML64 {
+    grid-area: 14 / 1 / 15 / 2;
+}
+.seatHTML65 {
+    grid-area: 15 / 1 / 16 / 2;
+}
+.seatHTML66 {
+    grid-area: 16 / 1 / 17 / 2;
+}
+.seatHTML67 {
+    grid-area: 17 / 1 / 18 / 2;
+}
+.seatHTML68 {
+    grid-area: 18 / 1 / 19 / 2;
+}
+.seatHTML69 {
+    grid-area: 19 / 1 / 20 / 2;
+}
+.seatHTML70 {
+    grid-area: 20 / 1 / 21 / 2;
+}
+.seatHTML71 {
+    grid-area: 21 / 1 / 22 / 2;
+}
+.seatHTML72 {
+    grid-area: 22 / 1 / 23 / 2;
+}
+.seatHTML73 {
+    grid-area: 23 / 1 / 24 / 2;
+}
+.seatHTML74 {
+    grid-area: 24 / 1 / 25 / 2;
+}
+.seatHTML75 {
+    grid-area: 25 / 1 / 26 / 2;
+}
+
+/* stół 2 */
+.seatHTML102 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.seatHTML103 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.seatHTML104 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+.seatHTML105 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+.seatHTML106 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+.seatHTML107 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+.seatHTML108 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+.seatHTML109 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+.seatHTML110 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+.seatHTML111 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+.seatHTML112 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+.seatHTML113 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+.seatHTML114 {
+    grid-area: 14 / 1 / 15 / 2;
+}
+.seatHTML115 {
+    grid-area: 15 / 1 / 16 / 2;
+}
+.seatHTML116 {
+    grid-area: 16 / 1 / 17 / 2;
+}
+.seatHTML117 {
+    grid-area: 17 / 1 / 18 / 2;
+}
+.seatHTML118 {
+    grid-area: 18 / 1 / 19 / 2;
+}
+.seatHTML119 {
+    grid-area: 19 / 1 / 20 / 2;
+}
+.seatHTML120 {
+    grid-area: 20 / 1 / 21 / 2;
+}
+.seatHTML121 {
+    grid-area: 21 / 1 / 22 / 2;
+}
+.seatHTML122 {
+    grid-area: 22 / 1 / 23 / 2;
+}
+.seatHTML123 {
+    grid-area: 23 / 1 / 24 / 2;
+}
+.seatHTML124 {
+    grid-area: 24 / 1 / 25 / 2;
+}
+.seatHTML125 {
+    grid-area: 25 / 1 / 26 / 2;
+}
 
 
 
@@ -346,11 +566,29 @@ h1 {
     background-color: purple;
 }
 
+#Organizacja{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 
 /* sekcja 6 */
 #Zdjęcia {
     background-color: orange;
+}
+
+#Zdjęcia{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Zdjęcia a {
+    text-decoration: none;
 }
 
 
