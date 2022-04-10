@@ -54,12 +54,11 @@ function addAtributeSeat(numb) {
 function underlineMenuItem() {
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
-    var menuheight=document.querySelector('.menu').offsetHeight;
-     console.log(menuheight);
+    var menuheight = document.querySelector('.menu').offsetHeight;
     for (var i = 0; i < sections.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = sections[i].getBoundingClientRect().top;
-        if (elementTop + windowHeight -menuheight < windowHeight) {
+        if (elementTop + windowHeight - menuheight < windowHeight) {
             menuitems[i].classList.add("active");
             if (i > 0) {
                 menuitems[i - 1].classList.remove("active");
@@ -68,9 +67,6 @@ function underlineMenuItem() {
             menuitems[i].classList.remove("active");
         }
     }
-    console.log(menuheight);
-
-
 }
 
 window.addEventListener("scroll", underlineMenuItem);
