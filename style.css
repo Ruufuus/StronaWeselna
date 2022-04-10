@@ -201,7 +201,7 @@ h3 {
 } */
 
 .table {
-    background-color: blue;
+    /* background-color: blue; */
     position: relative;
     display: grid;
     justify-items: center
@@ -221,7 +221,7 @@ h3 {
     height: auto;
     padding: 5vh 0;
     justify-content: space-evenly;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 @media (max-width: 600px) {
