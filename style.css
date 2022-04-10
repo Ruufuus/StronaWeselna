@@ -35,6 +35,13 @@ body {
     z-index: 10;
 }
 
+@media (max-width: 600px) {
+    .flowersContainerLeft,
+    .flowersContainerRight {
+        position: absolute;
+    }
+}
+
 .flowersLeft {
     display: block;
     max-width: 75%;
@@ -91,8 +98,12 @@ h1 {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    
 
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center
 }
 
 .menu ul li a {
@@ -109,7 +120,11 @@ h1 {
     color: #4a4a4a;
 }
 
-
+@media (max-width: 600px) {
+    .menu {
+        width: 100vw;
+    }
+}
 
 /* ustawienia sekcji */
 .sectionContainer {
@@ -127,9 +142,10 @@ h1 {
     background-color: red;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .sectionContainer {
         margin: 0;
+        width: 100vw;
     }
     .section1 {
         margin: 50vh 0 0 0;
@@ -167,7 +183,7 @@ h3 {
 
 
 /* sekcja 4 */
-.roomContainer {
+/* .roomContainer {
     position: relative;
     left: 0px;
     width: 70vw;
@@ -175,17 +191,17 @@ h3 {
     height: auto;
     margin: 0vh 15vw 0 15vw;
     background-color: red;
-}
+} */
 
 
-@media (max-width: 500px) {
+/* @media (max-width: 600px) {
     .roomContainer {
         margin: 3vh 0 0 0;
     }
-}
+} */
 
 .table {
-    /* background-color: blue; */
+    background-color: blue;
     position: relative;
     display: grid;
     justify-items: center
@@ -205,15 +221,22 @@ h3 {
     height: auto;
     padding: 5vh 0;
     justify-content: space-evenly;
-    /* background-color: yellow; */
+    background-color: yellow;
+}
+
+@media (max-width: 600px) {
+    .guestContainer {
+        width: 100vw;
+        padding: 5vh 3vw;
+    }
 }
 
 .guestTable {
     width: 20vw;
     height: auto;
 
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: 50px;
+    grid-template-columns: 30% 20% 20% 30%;
+    grid-template-rows: auto-fill;
     grid-column-gap: 5px;
     grid-row-gap: 13px;
 
@@ -269,6 +292,10 @@ h3 {
     font-size: 20px;
 }
 
+.guestSerchBarTitle {
+    display: none;
+}
+
 .guestSerchBar {
     position: absolute;
     top: 4vh;
@@ -280,22 +307,48 @@ h3 {
     border: 2px solid #ccc;
 }
 
+@media (max-width: 600px) {
+    .guestSerchBar {
+        position: relative;
+        top: 0;
+        left: 15vw;
+        right: 0;
+        height: 30vh;
+        width: 70vw;
+    }
+    .arrow {
+        display: none;
+    }
+
+    .guestSerchBarTitle {
+        display: block;
+        text-align: center;
+        margin: 2vh 0;
+        font-size: 1.1rem;
+    }
+}
+
+
+
 .chairLeft {
     position: relative;
-    height: 50px;
-    width: 55px;
+    height: clamp(25px,2.7vw,45px);
+    left: clamp(3px,0.6vw,0.6vw);
+    width: clamp(30px,2.9vw,50px);
     background-color: #841010;
     opacity: 1;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border: 2px solid black;
+    justify-items: end;
+    margin: clamp(5px,0.4vw,10px) 0px;
 }
 
 .chairLeft:before {
     content: "";
     position: absolute;
     left: -9px;
-    height: 48px;
+    height: clamp(25px,2.7vw,45px);
     width: 8px;
     background-color: #690F0F;
     border-radius: 5px;
@@ -304,20 +357,22 @@ h3 {
 
 .chairRight {
     position: relative;
-    height: 50px;
-    width: 55px;
+    height: clamp(25px,2.7vw,45px);
+    right: clamp(3px,0.6vw,0.6vw);
+    width: clamp(30px,2.9vw,50px);
     background-color: #841010;
     opacity: 1;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border: 2px solid black;
+    margin: clamp(5px,0.4vw,10px) 0px;
 }
 
 .chairRight:after {
     content: "";
     position: absolute;
     right: -9px;
-    height: 48px;
+    height: clamp(25px,2.7vw,45px);
     width: 8px;
     background-color: #690F0F;
     border-radius: 5px;
