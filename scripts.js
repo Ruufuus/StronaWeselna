@@ -53,20 +53,23 @@ function addAtributeSeat(numb) {
 
 function underlineMenuItem() {
     var sections = document.querySelectorAll(".sectionContainer");
-
     var menuitems = document.querySelectorAll(".menu-item");
+    var menuheight=document.querySelector('.menu').offsetHeight;
+     console.log(menuheight);
     for (var i = 0; i < sections.length; i++) {
         var windowHeight = window.innerHeight;
-        console.log(windowHeight);
         var elementTop = sections[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight) {
+        if (elementTop + windowHeight -menuheight < windowHeight) {
             menuitems[i].classList.add("active");
+            if (i > 0) {
+                menuitems[i - 1].classList.remove("active");
+            }
         } else {
             menuitems[i].classList.remove("active");
         }
     }
-        console.log(windowHeight);
-        console.log(elementTop);
+    console.log(menuheight);
+
 
 }
 
