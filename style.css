@@ -1,8 +1,3 @@
-/* aawadj
-awfdaw
-afaw */
-
-
 html {
     scroll-behavior: smooth;
 }
@@ -677,25 +672,19 @@ h3 {
 
 .toDoIcon {
     position: fixed;
-    left: 0;
+    left: 1vw;
     top: 50vh;
     background-color: orange;
-    height: 50px;
-    width: 50px;
+    height: 54px;
+    width: 54px;
     cursor: pointer;
     z-index: 20;
+    border: 2px solid black;
+    border-radius: 5%;
 }
 
 .toDoCheckbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    opacity: 0;
-}
-
-.toDoCheckbox:checked + .toDoList {
-    display: block;
+    display: none;
 }
 
 .toDoList {
@@ -704,8 +693,19 @@ h3 {
     top: 0;
     background-color: red;
     height: 350px;
-    width: 180px;
+    width: 330px;
     padding: 20px;
     z-index: 20;
     display: none;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.toDoCheckbox:checked + .toDoList {
+    display: block;
+}
+
+
+.toDoIcon:checked {
+    background-color: red;
 }
