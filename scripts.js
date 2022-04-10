@@ -34,13 +34,13 @@ arrayObject.sort(compare);
 // renderowanie listy
 for (let i = 0; i < arrayObject.length; i++) {
     serchbar.innerHTML +=
-        "<input type=\"checkbox\" onclick=\"addAtributeSeat(" +
+        "<label><input type=\"checkbox\" onclick=\"addAtributeSeat(" +
         arrayObject[i].number +
         ")\" id=\"" +
         arrayObject[i].id +
         "\"/>" +
         arrayObject[i].nazwisko +
-        "<br />"
+        "<br /></label>"
 }
 
 // podswietlanie osoby z listy
@@ -96,5 +96,19 @@ var x = setInterval(function () {
     document.getElementById("hours").innerHTML = hours + "h";
     document.getElementById("minutes").innerHTML = minutes + "m";
     document.getElementById("seconds").innerHTML = seconds + "s";
-    console.log(seconds);
 }, second);
+
+function find() {
+    var inp, filter, i, txtValue;
+    inp = document.getElementById("myInput");
+    filter = inp.value.toUpperCase();
+    inputs = document.querySelectorAll(".guestSerchBar label");
+    for (i = 0; i < inputs.length; i++) {
+        txtValue = inputs[i].textContent || inputs[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            inputs[i].style.display = "";
+        } else {
+            inputs[i].style.display = "none";
+        }
+    }
+}
