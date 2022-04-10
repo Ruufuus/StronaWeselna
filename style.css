@@ -132,7 +132,11 @@ h1 {
 .timer {
     display: flex;
     justify-content: center;
-    padding: 6px;
+}
+.timer div
+{
+    padding:2%;
+    font-size: 4vw;
 }
 
 @media (max-width: 600px) {
