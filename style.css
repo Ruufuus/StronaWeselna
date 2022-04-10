@@ -125,8 +125,14 @@ h1 {
 }
 
 .menu-item.active {
-    color:black;
+    color: black;
     transition: 0.1s;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
 }
 
 @media (max-width: 600px) {

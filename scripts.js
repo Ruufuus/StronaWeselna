@@ -70,3 +70,31 @@ function underlineMenuItem() {
 }
 
 window.addEventListener("scroll", underlineMenuItem);
+
+const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+var weddingDate = new Date("Sep 24, 2022 16:30:00").getTime();
+// Update the count down every 1 second
+var x = setInterval(function () {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = weddingDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (day));
+    var hours = Math.floor((distance % (day)) / (hour));
+    var minutes = Math.floor((distance % hour) / (minute));
+    var seconds = Math.floor((distance % (minute)) / second);
+
+    // Output the result
+    document.getElementById("days").innerHTML = days + "d";
+    document.getElementById("hours").innerHTML = hours + "h";
+    document.getElementById("minutes").innerHTML = minutes + "m";
+    document.getElementById("seconds").innerHTML = seconds + "s";
+    console.log(seconds);
+}, second);
