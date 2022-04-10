@@ -124,7 +124,10 @@ h1 {
 .menu ul li a:hover:not(.active) {
     color: #4a4a4a;
 }
-
+.menu-item.active
+{
+    text-decoration: underline;
+}
 @media (max-width: 600px) {
     .menu {
         width: 100vw;
@@ -141,7 +144,6 @@ h1 {
     padding: 6vh 0;
     float: left;
 }
-
 
 
 @media (max-width: 600px) {

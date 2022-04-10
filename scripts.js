@@ -8,43 +8,66 @@ var p2List = Array.from(p2NodeList);
 
 // array of objects
 let arrayObject = []
-for(let i = 0 ; i < p2List.length; i++) {
+for (let i = 0; i < p2List.length; i++) {
     arrayObject[i] = {
-        "nazwisko":p2List[i].outerText,
-        "id":"seat"+[(i+1)],
-        "number": (i+1)
+        "nazwisko": p2List[i].outerText,
+        "id": "seat" + [(i + 1)],
+        "number": (i + 1)
     }
 }
 
 
 // sortowanie alfabetyczne
-function compare( a, b ) {
-    if ( a.nazwisko < b.nazwisko ){
-      return -1;
+function compare(a, b) {
+    if (a.nazwisko < b.nazwisko) {
+        return -1;
     }
-    if ( a.nazwisko > b.nazwisko ){
-      return 1;
+    if (a.nazwisko > b.nazwisko) {
+        return 1;
     }
     return 0;
 }
-arrayObject.sort( compare );
+arrayObject.sort(compare);
 // console.log("arrayObject",arrayObject)
 
 
 // renderowanie listy
-for(let i = 0 ; i < arrayObject.length; i++) {
-    serchbar.innerHTML += 
+for (let i = 0; i < arrayObject.length; i++) {
+    serchbar.innerHTML +=
         "<input type=\"checkbox\" onclick=\"addAtributeSeat(" +
-        arrayObject[i].number + 
+        arrayObject[i].number +
         ")\" id=\"" +
-        arrayObject[i].id + 
-        "\"/>" + 
-        arrayObject[i].nazwisko + 
+        arrayObject[i].id +
+        "\"/>" +
+        arrayObject[i].nazwisko +
         "<br />"
 }
 
 // podswietlanie osoby z listy
 function addAtributeSeat(numb) {
-    let seat = document.querySelector('.seatHTML'+ numb)
-    seat.classList.toggle ('checkOn');
+    let seat = document.querySelector('.seatHTML' + numb)
+    seat.classList.toggle('checkOn');
 }
+
+//dodawanie underline do sekcji w ktorej jestesmy
+
+function underlineMenuItem() {
+    var sections = document.querySelectorAll(".sectionContainer");
+
+    var menuitems = document.querySelectorAll(".menu-item");
+    for (var i = 0; i < sections.length; i++) {
+        var windowHeight = window.innerHeight;
+        console.log(windowHeight);
+        var elementTop = sections[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight) {
+            menuitems[i].classList.add("active");
+        } else {
+            menuitems[i].classList.remove("active");
+        }
+    }
+        console.log(windowHeight);
+        console.log(elementTop);
+
+}
+
+window.addEventListener("scroll", underlineMenuItem);
