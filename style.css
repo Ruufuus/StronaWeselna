@@ -130,7 +130,7 @@ h1 {
 .sectionContainer {
     position: relative;
     left: 0px;
-    width: auto;
+    width: 70%;
     height: auto;
     margin: 0vh 15vw 0 15vw;
     padding: 6vh 0;
@@ -139,7 +139,10 @@ h1 {
 
 .section1 {
     margin: 50vh 15vw 0 15vw;
-    background-color: red;
+}
+
+.church{
+    width:50%;
 }
 
 @media (max-width: 600px) {
@@ -157,8 +160,7 @@ h1 {
 
 /* sekcja 1 */
 #Slub {
-    background-color: red;
-   
+   display:flex;
 }
 
 h3 {
