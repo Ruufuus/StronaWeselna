@@ -10,7 +10,7 @@ var p2List = Array.from(p2NodeList);
 let arrayObject = []
 for (let i = 0; i < p2List.length; i++) {
     arrayObject[i] = {
-        "nazwisko": p2List[i].outerText,
+        "nick": p2List[i].outerText,
         "id": "seat" + [(i + 1)],
         "number": (i + 1)
     }
@@ -19,10 +19,10 @@ for (let i = 0; i < p2List.length; i++) {
 
 // sortowanie alfabetyczne
 function compare(a, b) {
-    if (a.nazwisko < b.nazwisko) {
+    if (a.nick < b.nick) {
         return -1;
     }
-    if (a.nazwisko > b.nazwisko) {
+    if (a.nick > b.nick) {
         return 1;
     }
     return 0;
@@ -49,7 +49,7 @@ function addAtributeSeat(numb) {
     seat.classList.toggle('checkOn');
 }
 
-//dodawanie underline do sekcji w ktorej jestesmy
+//dodawanie underline do sekcji w której jestesmy
 
 function underlineMenuItem() {
     var sections = document.querySelectorAll(".sectionContainer");
@@ -118,7 +118,7 @@ function resizemap() {
     var churimg = document.getElementsByClassName("church");
     var churimgheight = churimg[0].height;
     document.getElementById("church-map").height = churimgheight;
-     var hallimg = document.getElementsByClassName("hall");
+    var hallimg = document.getElementsByClassName("hall");
     var hallimgheight = hallimg[0].height;
     document.getElementById("hall-map").height = hallimgheight;
 

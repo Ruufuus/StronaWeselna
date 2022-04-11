@@ -16,6 +16,41 @@ body {
 }
 
 
+/* ToDo Lista */
+.toDoIcon {
+    position: fixed;
+    left: 1vw;
+    top: 40vh;
+    background-color: orange;
+    height: 54px;
+    width: 54px;
+    cursor: pointer;
+    z-index: 20;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.toDoCheckbox {
+    display: none;
+}
+
+.toDoList {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: red;
+    height: auto;
+    width: 330px;
+    padding: 20px;
+    z-index: 20;
+    display: none;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.toDoCheckbox:checked + .toDoList {
+    display: block;
+}
 
 /* kwiatki */
 .flowersContainerLeft {
@@ -203,7 +238,7 @@ h3 {
 
 .church {
     width: 100%;
-    height:10px%;
+    height:auto;
 }
 
 .name-church, .hour-church {
@@ -229,7 +264,7 @@ h3 {
 }
 .hall {
     width: 100%;
-    height:10px%;
+    height:auto;
 }
 
 .name-hall, .hour-hall {
@@ -797,42 +832,7 @@ h3 {
 }
 
 
-.toDoIcon {
-    position: fixed;
-    left: 1vw;
-    top: 50vh;
-    background-color: orange;
-    height: 54px;
-    width: 54px;
-    cursor: pointer;
-    z-index: 20;
-    border: 2px solid black;
-    border-radius: 5%;
-}
-
-.toDoCheckbox {
-    display: none;
-}
-
-.toDoList {
-    position: relative;
-    left: 0;
-    top: 0;
-    background-color: red;
-    height: 350px;
-    width: 330px;
-    padding: 20px;
-    z-index: 20;
-    display: none;
-    border: 2px solid black;
-    border-radius: 5%;
-}
-
-.toDoCheckbox:checked + .toDoList {
-    display: block;
-}
 
 
-.toDoIcon:checked {
-    background-color: red;
-}
+
+
