@@ -117,8 +117,10 @@ function find() {
 function resizemap() {
     var churimg = document.getElementsByClassName("church");
     var churimgheight = churimg[0].height;
-    console.log(churimgheight);
     document.getElementById("church-map").height = churimgheight;
+     var hallimg = document.getElementsByClassName("hall");
+    var hallimgheight = hallimg[0].height;
+    document.getElementById("hall-map").height = hallimgheight;
 
 }
 window.addEventListener('load', resizemap);
