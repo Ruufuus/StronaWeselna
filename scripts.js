@@ -112,3 +112,14 @@ function find() {
         }
     }
 }
+
+//zmiana wysokości mapki
+function resizemap() {
+    var churimg = document.getElementsByClassName("church");
+    var churimgheight = churimg[0].height;
+    console.log(churimgheight);
+    document.getElementById("church-map").height = churimgheight;
+
+}
+window.addEventListener('load', resizemap);
+window.addEventListener('resize', resizemap);
