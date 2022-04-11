@@ -213,13 +213,31 @@ h3 {
 
 }
 
-.map-church {border-radius: 20px;}
 
 /* sekcja 2 */
 #Wesele {
-    background-color: yellow;
+       display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* set column sizes here */
+    grid-template-rows: auto auto;
+    /* we want two rows */
+
+    grid-gap: 10px;
+    /* how far between cells? */
+    grid-auto-flow: column;
+
+}
+.hall {
+    width: 100%;
+    height:10px%;
 }
 
+.name-hall, .hour-hall {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 /* sekcja 3 */
