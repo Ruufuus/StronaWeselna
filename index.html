@@ -19,37 +19,44 @@
 
     <label class="toDoIcon">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-        <svg class="SvgBottom" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-        </svg>
-        <input type="checkbox" class="toDoCheckbox">
-        <div class="toDoList">
-            <h2>ToDo List:</h2>
-            <li>RWD .guestSerchBar dla PC</li>
-            <li>CSS dla .guestSerchBar</li>
-            <li>CSS dla stolika pary młodej</li>
-            <li>kompatybilność CSS na wszystkie przeglądarki</li>
-            <li>font-size na smartfony</li>
-            <li>RWD dla tabletów</li>
-            <li>podpiąć google dysk do zdjęć</li>
-        </div>
+            <svg class="SvgBottom" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+            <input type="checkbox" class="toDoCheckbox">
+            <div class="toDoList">
+                <h2>ToDo List:</h2>
+                <li>RWD .guestSerchBar dla PC</li>
+                <li>CSS dla .guestSerchBar</li>
+                <li>CSS dla stolika pary młodej</li>
+                <li>kompatybilność CSS na wszystkie przeglądarki</li>
+                <li>font-size na smartfony</li>
+                <li>RWD dla tabletów</li>
+                <li>podpiąć google dysk do zdjęć</li>
+            </div>
     </label>
     <!-- navbar + tytuł -->
     <h1 class="title">Gosia & Paweł</h1>
     <nav class="menu">
         <ul>
-            <li><a class="menu-item" href='#Slub'> Ślub</a></li> <!--godzina i lokalizacja  -->
-            <li><a class="menu-item" href='#Wesele' >Wesele</a></li> <!--godzina i lokalizacja  -->
-            <li><a class="menu-item" href='#PlanWesela' >Plan wesela</a></li>
-            <li><a class="menu-item" href='#PlanSali' >Plan sali</a></li>
-            <li><a class="menu-item" href='#Organizacja' >Organizacja</a></li>
-            <li><a class="menu-item" href='#Zdjęcia' >Zdjęcia</a></li>
-            <li><a class="menu-item" href='#Kontakt' >Kontakt</a></li>
+            <li><a class="menu-item" href='#Slub'> Ślub</a></li>
+            <!--godzina i lokalizacja  -->
+            <li><a class="menu-item" href='#Wesele'>Wesele</a></li>
+            <!--godzina i lokalizacja  -->
+            <li><a class="menu-item" href='#PlanWesela'>Plan wesela</a></li>
+            <li><a class="menu-item" href='#PlanSali'>Plan sali</a></li>
+            <li><a class="menu-item" href='#Organizacja'>Organizacja</a></li>
+            <li><a class="menu-item" href='#Zdjęcia'>Zdjęcia</a></li>
+            <li><a class="menu-item" href='#Kontakt'>Kontakt</a></li>
         </ul>
     </nav>
-    <div class="timer"><div id="days"></div><div id="hours"></div><div id="minutes"></div><div id="seconds"></div></div>
+    <div class="timer">
+        <div id="days"></div>
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+    </div>
     <!-- kwiatki -->
-    <div class="flowersContainerLeft"> 
+    <div class="flowersContainerLeft">
         <img class="flowersLeft" src="img\flowerLeft2.png">
     </div>
     <div class="flowersContainerRight">
@@ -58,27 +65,30 @@
 
     <!-- sekcja 1 -->
     <div class="sectionContainer section1" id="Slub">
-                <img class="church" src="img\kosciol.jpg">
+        <img class="church" src="img\kosciol.jpg">
+         <div class="hour-church"><p>Ślub odbędzie się o 16:30</p></div>
+        <div class="name-church"><p>Kościół św. Mateusza Ewangelisty i Apostoła w Murzynnie</p></div>
 
 
-        <div style="width: 100%;flex:1;"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=ko%C5%9Bc%C3%B3%C5%82%20w%20murzynnie+(Ko%C5%9Bci%C3%B3%C5%82)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/marine-gps/">marine gps</a></iframe></div>
-    </div>
+            <div style="width: 100%;"><iframe id="church-map" width="100%"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=ko%C5%9Bc%C3%B3%C5%82%20w%20murzynnie+(Ko%C5%9Bci%C3%B3%C5%82)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/marine-gps/">marine gps</a></iframe></div>
     
+    </div>
+
     <!-- sekcja 2 -->
     <div class="sectionContainer" id="Wesele">
-        
+
         Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
         <h3>Wesele też będzie :)</h3>
     </div>
-    
-        <!-- sekcja 3 -->
-        <div class="sectionContainer" id="PlanWesela">
-            
-            Where does it come from?
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            <h3>Plan wesela też jest zaplanowany :)</h3>
-        </div>
+
+    <!-- sekcja 3 -->
+    <div class="sectionContainer" id="PlanWesela">
+
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        <h3>Plan wesela też jest zaplanowany :)</h3>
+    </div>
 
 
 
@@ -98,167 +108,467 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
             <div class="guestTable table">
                 <div class="tableTable"></div>
 
-                <span class="chairLeft seatHTML1"><p2 class="">Mamm0n</p2></span>
-                <span class="chairLeft seatHTML2"><p2 class="">Małysz Adam </p2></span>
-                <span class="chairLeft seatHTML3"><p2 class="">Amrah Demonzz1 Kamil </p2></span>
-                <span class="chairLeft seatHTML4"><p2 class="">Antoni Macierewicz </p2></span>
-                <span class="chairLeft seatHTML5"><p2 class="">Andrzej Duda</p2></span>
-                <span class="chairLeft seatHTML6"><p2 class="">Pudzienowski Mariusz</p2></span>
-                <span class="chairLeft seatHTML7"><p2 class="">Pan Maciesk spodsklepu</p2></span>
-                <span class="chairLeft seatHTML8"><p2 class="">Tacikiewicz Gucio Witold</p2></span>
-                <span class="chairLeft seatHTML9"><p2 class="">Rodowicz Maryla</p2></span>
-                <span class="chairLeft seatHTML10"><p2 class="">Harry Poter</p2></span>
-                <span class="chairLeft seatHTML11"><p2 class="">Zbyszko z Bogdańca</p2></span>
-                <span class="chairLeft seatHTML12"><p2 class="">Jendrula</p2></span>
-                <span class="chairLeft seatHTML13"><p2 class="">Posterunkowy</p2></span>
-                <span class="chairLeft seatHTML14"><p2 class="">Wodecki</p2></span>
-                <span class="chairLeft seatHTML15"><p2 class="">Young Leosia</p2></span>
-                <span class="chairLeft seatHTML16"><p2 class="">Pani od polskiego</p2></span>
-                <span class="chairLeft seatHTML17"><p2 class="">Gerald</p2></span>
-                <span class="chairLeft seatHTML18"><p2 class="">x02</p2></span>
-                <span class="chairLeft seatHTML19"><p2 class="">x03</p2></span>
-                <span class="chairLeft seatHTML20"><p2 class="">x04</p2></span>
-                <span class="chairLeft seatHTML21"><p2 class="">x05</p2></span>
-                <span class="chairLeft seatHTML22"><p2 class="">x06</p2></span>
-                <span class="chairLeft seatHTML23"><p2 class="">x07</p2></span>
-                <span class="chairLeft seatHTML24"><p2 class="">x08</p2></span>
-                <span class="chairLeft seatHTML25"><p2 class="">x09</p2></span>
-                <span class="chairRight seatHTML26"><p2 class="">Maciek Maćkowski</p2></span>
-                <span class="chairRight seatHTML27"><p2 class="">x11</p2></span>
-                <span class="chairRight seatHTML28"><p2 class="">x12</p2></span>
-                <span class="chairRight seatHTML29"><p2 class="">x13</p2></span>
-                <span class="chairRight seatHTML30"><p2 class="">x14</p2></span>
-                <span class="chairRight seatHTML31"><p2 class="">x15</p2></span>
-                <span class="chairRight seatHTML32"><p2 class="">x16</p2></span>
-                <span class="chairRight seatHTML33"><p2 class="">x17</p2></span>
-                <span class="chairRight seatHTML34"><p2 class="">x18</p2></span>
-                <span class="chairRight seatHTML35"><p2 class="">x19</p2></span>
-                <span class="chairRight seatHTML36"><p2 class="">x20</p2></span>
-                <span class="chairRight seatHTML37"><p2 class="">x21</p2></span>
-                <span class="chairRight seatHTML38"><p2 class="">x22</p2></span>
-                <span class="chairRight seatHTML39"><p2 class="">x23</p2></span>
-                <span class="chairRight seatHTML40"><p2 class="">x24</p2></span>
-                <span class="chairRight seatHTML41"><p2 class="">x25</p2></span>
-                <span class="chairRight seatHTML42"><p2 class="">x26</p2></span>
-                <span class="chairRight seatHTML43"><p2 class="">x27</p2></span>
-                <span class="chairRight seatHTML44"><p2 class="">x28</p2></span>
-                <span class="chairRight seatHTML45"><p2 class="">x29</p2></span>
-                <span class="chairRight seatHTML46"><p2 class="">x30</p2></span>
-                <span class="chairRight seatHTML47"><p2 class="">x31</p2></span>
-                <span class="chairRight seatHTML48"><p2 class="">x32</p2></span>
-                <span class="chairRight seatHTML49"><p2 class="">x33</p2></span>
-                <span class="chairRight seatHTML50"><p2 class="">x34</p2></span>
+                <span class="chairLeft seatHTML1">
+                    <p2 class="">Mamm0n</p2>
+                </span>
+                <span class="chairLeft seatHTML2">
+                    <p2 class="">Małysz Adam </p2>
+                </span>
+                <span class="chairLeft seatHTML3">
+                    <p2 class="">Amrah Demonzz1 Kamil </p2>
+                </span>
+                <span class="chairLeft seatHTML4">
+                    <p2 class="">Antoni Macierewicz </p2>
+                </span>
+                <span class="chairLeft seatHTML5">
+                    <p2 class="">Andrzej Duda</p2>
+                </span>
+                <span class="chairLeft seatHTML6">
+                    <p2 class="">Pudzienowski Mariusz</p2>
+                </span>
+                <span class="chairLeft seatHTML7">
+                    <p2 class="">Pan Maciesk spodsklepu</p2>
+                </span>
+                <span class="chairLeft seatHTML8">
+                    <p2 class="">Tacikiewicz Gucio Witold</p2>
+                </span>
+                <span class="chairLeft seatHTML9">
+                    <p2 class="">Rodowicz Maryla</p2>
+                </span>
+                <span class="chairLeft seatHTML10">
+                    <p2 class="">Harry Poter</p2>
+                </span>
+                <span class="chairLeft seatHTML11">
+                    <p2 class="">Zbyszko z Bogdańca</p2>
+                </span>
+                <span class="chairLeft seatHTML12">
+                    <p2 class="">Jendrula</p2>
+                </span>
+                <span class="chairLeft seatHTML13">
+                    <p2 class="">Posterunkowy</p2>
+                </span>
+                <span class="chairLeft seatHTML14">
+                    <p2 class="">Wodecki</p2>
+                </span>
+                <span class="chairLeft seatHTML15">
+                    <p2 class="">Young Leosia</p2>
+                </span>
+                <span class="chairLeft seatHTML16">
+                    <p2 class="">Pani od polskiego</p2>
+                </span>
+                <span class="chairLeft seatHTML17">
+                    <p2 class="">Gerald</p2>
+                </span>
+                <span class="chairLeft seatHTML18">
+                    <p2 class="">x02</p2>
+                </span>
+                <span class="chairLeft seatHTML19">
+                    <p2 class="">x03</p2>
+                </span>
+                <span class="chairLeft seatHTML20">
+                    <p2 class="">x04</p2>
+                </span>
+                <span class="chairLeft seatHTML21">
+                    <p2 class="">x05</p2>
+                </span>
+                <span class="chairLeft seatHTML22">
+                    <p2 class="">x06</p2>
+                </span>
+                <span class="chairLeft seatHTML23">
+                    <p2 class="">x07</p2>
+                </span>
+                <span class="chairLeft seatHTML24">
+                    <p2 class="">x08</p2>
+                </span>
+                <span class="chairLeft seatHTML25">
+                    <p2 class="">x09</p2>
+                </span>
+                <span class="chairRight seatHTML26">
+                    <p2 class="">Maciek Maćkowski</p2>
+                </span>
+                <span class="chairRight seatHTML27">
+                    <p2 class="">x11</p2>
+                </span>
+                <span class="chairRight seatHTML28">
+                    <p2 class="">x12</p2>
+                </span>
+                <span class="chairRight seatHTML29">
+                    <p2 class="">x13</p2>
+                </span>
+                <span class="chairRight seatHTML30">
+                    <p2 class="">x14</p2>
+                </span>
+                <span class="chairRight seatHTML31">
+                    <p2 class="">x15</p2>
+                </span>
+                <span class="chairRight seatHTML32">
+                    <p2 class="">x16</p2>
+                </span>
+                <span class="chairRight seatHTML33">
+                    <p2 class="">x17</p2>
+                </span>
+                <span class="chairRight seatHTML34">
+                    <p2 class="">x18</p2>
+                </span>
+                <span class="chairRight seatHTML35">
+                    <p2 class="">x19</p2>
+                </span>
+                <span class="chairRight seatHTML36">
+                    <p2 class="">x20</p2>
+                </span>
+                <span class="chairRight seatHTML37">
+                    <p2 class="">x21</p2>
+                </span>
+                <span class="chairRight seatHTML38">
+                    <p2 class="">x22</p2>
+                </span>
+                <span class="chairRight seatHTML39">
+                    <p2 class="">x23</p2>
+                </span>
+                <span class="chairRight seatHTML40">
+                    <p2 class="">x24</p2>
+                </span>
+                <span class="chairRight seatHTML41">
+                    <p2 class="">x25</p2>
+                </span>
+                <span class="chairRight seatHTML42">
+                    <p2 class="">x26</p2>
+                </span>
+                <span class="chairRight seatHTML43">
+                    <p2 class="">x27</p2>
+                </span>
+                <span class="chairRight seatHTML44">
+                    <p2 class="">x28</p2>
+                </span>
+                <span class="chairRight seatHTML45">
+                    <p2 class="">x29</p2>
+                </span>
+                <span class="chairRight seatHTML46">
+                    <p2 class="">x30</p2>
+                </span>
+                <span class="chairRight seatHTML47">
+                    <p2 class="">x31</p2>
+                </span>
+                <span class="chairRight seatHTML48">
+                    <p2 class="">x32</p2>
+                </span>
+                <span class="chairRight seatHTML49">
+                    <p2 class="">x33</p2>
+                </span>
+                <span class="chairRight seatHTML50">
+                    <p2 class="">x34</p2>
+                </span>
 
 
             </div>
             <div class="guestTable table">
                 <div class="tableTable"></div>
 
-                <span class="chairLeft seatHTML51"><p2 class="">y01</p2></span>
-                <span class="chairLeft seatHTML52"><p2 class="">y02</p2></span>
-                <span class="chairLeft seatHTML53"><p2 class="">y03</p2></span>
-                <span class="chairLeft seatHTML54"><p2 class="">y04</p2></span>
-                <span class="chairLeft seatHTML55"><p2 class="">y05</p2></span>
-                <span class="chairLeft seatHTML56"><p2 class="">y06</p2></span>
-                <span class="chairLeft seatHTML57"><p2 class="">y07</p2></span>
-                <span class="chairLeft seatHTML58"><p2 class="">y08</p2></span>
-                <span class="chairLeft seatHTML59"><p2 class="">y09</p2></span>
-                <span class="chairLeft seatHTML60"><p2 class="">y10</p2></span>
-                <span class="chairLeft seatHTML61"><p2 class="">y11</p2></span>
-                <span class="chairLeft seatHTML62"><p2 class="">y12</p2></span>
-                <span class="chairLeft seatHTML63"><p2 class="">y13</p2></span>
-                <span class="chairLeft seatHTML64"><p2 class="">y14</p2></span>
-                <span class="chairLeft seatHTML65"><p2 class="">y15</p2></span>
-                <span class="chairLeft seatHTML66"><p2 class="">y16</p2></span>
-                <span class="chairLeft seatHTML67"><p2 class="">y17</p2></span>
-                <span class="chairLeft seatHTML68"><p2 class="">y18</p2></span>
-                <span class="chairLeft seatHTML69"><p2 class="">y19</p2></span>
-                <span class="chairLeft seatHTML70"><p2 class="">y20</p2></span>
-                <span class="chairLeft seatHTML71"><p2 class="">y21</p2></span>
-                <span class="chairLeft seatHTML72"><p2 class="">y22</p2></span>
-                <span class="chairLeft seatHTML73"><p2 class="">y23</p2></span>
-                <span class="chairLeft seatHTML74"><p2 class="">y24</p2></span>
-                <span class="chairLeft seatHTML75"><p2 class="">y25</p2></span>
-                <span class="chairRight seatHTML76"><p2 class="">y26</p2></span>
-                <span class="chairRight seatHTML77"><p2 class="">y27</p2></span>
-                <span class="chairRight seatHTML78"><p2 class="">y28</p2></span>
-                <span class="chairRight seatHTML79"><p2 class="">y29</p2></span>
-                <span class="chairRight seatHTML80"><p2 class="">y30</p2></span>
-                <span class="chairRight seatHTML81"><p2 class="">y31</p2></span>
-                <span class="chairRight seatHTML82"><p2 class="">y32</p2></span>
-                <span class="chairRight seatHTML83"><p2 class="">y33</p2></span>
-                <span class="chairRight seatHTML84"><p2 class="">y34</p2></span>
-                <span class="chairRight seatHTML85"><p2 class="">y35</p2></span>
-                <span class="chairRight seatHTML86"><p2 class="">y36</p2></span>
-                <span class="chairRight seatHTML87"><p2 class="">y37</p2></span>
-                <span class="chairRight seatHTML88"><p2 class="">y38</p2></span>
-                <span class="chairRight seatHTML89"><p2 class="">y39</p2></span>
-                <span class="chairRight seatHTML90"><p2 class="">y40</p2></span>
-                <span class="chairRight seatHTML91"><p2 class="">y41</p2></span>
-                <span class="chairRight seatHTML92"><p2 class="">y42</p2></span>
-                <span class="chairRight seatHTML93"><p2 class="">y43</p2></span>
-                <span class="chairRight seatHTML94"><p2 class="">y44</p2></span>
-                <span class="chairRight seatHTML95"><p2 class="">y45</p2></span>
-                <span class="chairRight seatHTML96"><p2 class="">y46</p2></span>
-                <span class="chairRight seatHTML97"><p2 class="">y47</p2></span>
-                <span class="chairRight seatHTML98"><p2 class="">y48</p2></span>
-                <span class="chairRight seatHTML99"><p2 class="">y49</p2></span>
-                <span class="chairRight seatHTML100"><p2 class="">y50</p2></span>
+                <span class="chairLeft seatHTML51">
+                    <p2 class="">y01</p2>
+                </span>
+                <span class="chairLeft seatHTML52">
+                    <p2 class="">y02</p2>
+                </span>
+                <span class="chairLeft seatHTML53">
+                    <p2 class="">y03</p2>
+                </span>
+                <span class="chairLeft seatHTML54">
+                    <p2 class="">y04</p2>
+                </span>
+                <span class="chairLeft seatHTML55">
+                    <p2 class="">y05</p2>
+                </span>
+                <span class="chairLeft seatHTML56">
+                    <p2 class="">y06</p2>
+                </span>
+                <span class="chairLeft seatHTML57">
+                    <p2 class="">y07</p2>
+                </span>
+                <span class="chairLeft seatHTML58">
+                    <p2 class="">y08</p2>
+                </span>
+                <span class="chairLeft seatHTML59">
+                    <p2 class="">y09</p2>
+                </span>
+                <span class="chairLeft seatHTML60">
+                    <p2 class="">y10</p2>
+                </span>
+                <span class="chairLeft seatHTML61">
+                    <p2 class="">y11</p2>
+                </span>
+                <span class="chairLeft seatHTML62">
+                    <p2 class="">y12</p2>
+                </span>
+                <span class="chairLeft seatHTML63">
+                    <p2 class="">y13</p2>
+                </span>
+                <span class="chairLeft seatHTML64">
+                    <p2 class="">y14</p2>
+                </span>
+                <span class="chairLeft seatHTML65">
+                    <p2 class="">y15</p2>
+                </span>
+                <span class="chairLeft seatHTML66">
+                    <p2 class="">y16</p2>
+                </span>
+                <span class="chairLeft seatHTML67">
+                    <p2 class="">y17</p2>
+                </span>
+                <span class="chairLeft seatHTML68">
+                    <p2 class="">y18</p2>
+                </span>
+                <span class="chairLeft seatHTML69">
+                    <p2 class="">y19</p2>
+                </span>
+                <span class="chairLeft seatHTML70">
+                    <p2 class="">y20</p2>
+                </span>
+                <span class="chairLeft seatHTML71">
+                    <p2 class="">y21</p2>
+                </span>
+                <span class="chairLeft seatHTML72">
+                    <p2 class="">y22</p2>
+                </span>
+                <span class="chairLeft seatHTML73">
+                    <p2 class="">y23</p2>
+                </span>
+                <span class="chairLeft seatHTML74">
+                    <p2 class="">y24</p2>
+                </span>
+                <span class="chairLeft seatHTML75">
+                    <p2 class="">y25</p2>
+                </span>
+                <span class="chairRight seatHTML76">
+                    <p2 class="">y26</p2>
+                </span>
+                <span class="chairRight seatHTML77">
+                    <p2 class="">y27</p2>
+                </span>
+                <span class="chairRight seatHTML78">
+                    <p2 class="">y28</p2>
+                </span>
+                <span class="chairRight seatHTML79">
+                    <p2 class="">y29</p2>
+                </span>
+                <span class="chairRight seatHTML80">
+                    <p2 class="">y30</p2>
+                </span>
+                <span class="chairRight seatHTML81">
+                    <p2 class="">y31</p2>
+                </span>
+                <span class="chairRight seatHTML82">
+                    <p2 class="">y32</p2>
+                </span>
+                <span class="chairRight seatHTML83">
+                    <p2 class="">y33</p2>
+                </span>
+                <span class="chairRight seatHTML84">
+                    <p2 class="">y34</p2>
+                </span>
+                <span class="chairRight seatHTML85">
+                    <p2 class="">y35</p2>
+                </span>
+                <span class="chairRight seatHTML86">
+                    <p2 class="">y36</p2>
+                </span>
+                <span class="chairRight seatHTML87">
+                    <p2 class="">y37</p2>
+                </span>
+                <span class="chairRight seatHTML88">
+                    <p2 class="">y38</p2>
+                </span>
+                <span class="chairRight seatHTML89">
+                    <p2 class="">y39</p2>
+                </span>
+                <span class="chairRight seatHTML90">
+                    <p2 class="">y40</p2>
+                </span>
+                <span class="chairRight seatHTML91">
+                    <p2 class="">y41</p2>
+                </span>
+                <span class="chairRight seatHTML92">
+                    <p2 class="">y42</p2>
+                </span>
+                <span class="chairRight seatHTML93">
+                    <p2 class="">y43</p2>
+                </span>
+                <span class="chairRight seatHTML94">
+                    <p2 class="">y44</p2>
+                </span>
+                <span class="chairRight seatHTML95">
+                    <p2 class="">y45</p2>
+                </span>
+                <span class="chairRight seatHTML96">
+                    <p2 class="">y46</p2>
+                </span>
+                <span class="chairRight seatHTML97">
+                    <p2 class="">y47</p2>
+                </span>
+                <span class="chairRight seatHTML98">
+                    <p2 class="">y48</p2>
+                </span>
+                <span class="chairRight seatHTML99">
+                    <p2 class="">y49</p2>
+                </span>
+                <span class="chairRight seatHTML100">
+                    <p2 class="">y50</p2>
+                </span>
 
             </div>
             <div class="guestTable table">
                 <div class="tableTable"></div>
 
-                <span class="chairLeft seatHTML101"><p2 class="">z01</p2></span>
-                <span class="chairLeft seatHTML102"><p2 class="">z02</p2></span>
-                <span class="chairLeft seatHTML103"><p2 class="">z03</p2></span>
-                <span class="chairLeft seatHTML104"><p2 class="">z04</p2></span>
-                <span class="chairLeft seatHTML105"><p2 class="">z05</p2></span>
-                <span class="chairLeft seatHTML106"><p2 class="">z06</p2></span>
-                <span class="chairLeft seatHTML107"><p2 class="">z07</p2></span>
-                <span class="chairLeft seatHTML108"><p2 class="">z08</p2></span>
-                <span class="chairLeft seatHTML109"><p2 class="">z09</p2></span>
-                <span class="chairLeft seatHTML110"><p2 class="">z10</p2></span>
-                <span class="chairLeft seatHTML111"><p2 class="">z11</p2></span>
-                <span class="chairLeft seatHTML112"><p2 class="">z12</p2></span>
-                <span class="chairLeft seatHTML113"><p2 class="">z13</p2></span>
-                <span class="chairLeft seatHTML114"><p2 class="">z14</p2></span>
-                <span class="chairLeft seatHTML115"><p2 class="">z15</p2></span>
-                <span class="chairLeft seatHTML116"><p2 class="">z16</p2></span>
-                <span class="chairLeft seatHTML117"><p2 class="">z17</p2></span>
-                <span class="chairLeft seatHTML118"><p2 class="">z18</p2></span>
-                <span class="chairLeft seatHTML119"><p2 class="">z19</p2></span>
-                <span class="chairLeft seatHTML120"><p2 class="">z20</p2></span>
-                <span class="chairLeft seatHTML121"><p2 class="">z21</p2></span>
-                <span class="chairLeft seatHTML122"><p2 class="">z22</p2></span>
-                <span class="chairLeft seatHTML123"><p2 class="">z23</p2></span>
-                <span class="chairLeft seatHTML124"><p2 class="">z24</p2></span>
-                <span class="chairLeft seatHTML125"><p2 class="">z25</p2></span>
-                <span class="chairRight seatHTML126"><p2 class="">z26</p2></span>
-                <span class="chairRight seatHTML127"><p2 class="">z27</p2></span>
-                <span class="chairRight seatHTML128"><p2 class="">z28</p2></span>
-                <span class="chairRight seatHTML129"><p2 class="">z29</p2></span>
-                <span class="chairRight seatHTML130"><p2 class="">z30</p2></span>
-                <span class="chairRight seatHTML131"><p2 class="">z31</p2></span>
-                <span class="chairRight seatHTML132"><p2 class="">z32</p2></span>
-                <span class="chairRight seatHTML133"><p2 class="">z33</p2></span>
-                <span class="chairRight seatHTML134"><p2 class="">z34</p2></span>
-                <span class="chairRight seatHTML135"><p2 class="">z35</p2></span>
-                <span class="chairRight seatHTML136"><p2 class="">z36</p2></span>
-                <span class="chairRight seatHTML137"><p2 class="">z37</p2></span>
-                <span class="chairRight seatHTML138"><p2 class="">z38</p2></span>
-                <span class="chairRight seatHTML139"><p2 class="">z39</p2></span>
-                <span class="chairRight seatHTML140"><p2 class="">z40</p2></span>
-                <span class="chairRight seatHTML141"><p2 class="">z41</p2></span>
-                <span class="chairRight seatHTML142"><p2 class="">z42</p2></span>
-                <span class="chairRight seatHTML143"><p2 class="">z43</p2></span>
-                <span class="chairRight seatHTML144"><p2 class="">z44</p2></span>
-                <span class="chairRight seatHTML145"><p2 class="">z45</p2></span>
-                <span class="chairRight seatHTML146"><p2 class="">z46</p2></span>
-                <span class="chairRight seatHTML147"><p2 class="">z47</p2></span>
-                <span class="chairRight seatHTML148"><p2 class="">z48</p2></span>
-                <span class="chairRight seatHTML149"><p2 class="">z49</p2></span>
-                <span class="chairRight seatHTML150"><p2 class="">z50</p2></span>
+                <span class="chairLeft seatHTML101">
+                    <p2 class="">z01</p2>
+                </span>
+                <span class="chairLeft seatHTML102">
+                    <p2 class="">z02</p2>
+                </span>
+                <span class="chairLeft seatHTML103">
+                    <p2 class="">z03</p2>
+                </span>
+                <span class="chairLeft seatHTML104">
+                    <p2 class="">z04</p2>
+                </span>
+                <span class="chairLeft seatHTML105">
+                    <p2 class="">z05</p2>
+                </span>
+                <span class="chairLeft seatHTML106">
+                    <p2 class="">z06</p2>
+                </span>
+                <span class="chairLeft seatHTML107">
+                    <p2 class="">z07</p2>
+                </span>
+                <span class="chairLeft seatHTML108">
+                    <p2 class="">z08</p2>
+                </span>
+                <span class="chairLeft seatHTML109">
+                    <p2 class="">z09</p2>
+                </span>
+                <span class="chairLeft seatHTML110">
+                    <p2 class="">z10</p2>
+                </span>
+                <span class="chairLeft seatHTML111">
+                    <p2 class="">z11</p2>
+                </span>
+                <span class="chairLeft seatHTML112">
+                    <p2 class="">z12</p2>
+                </span>
+                <span class="chairLeft seatHTML113">
+                    <p2 class="">z13</p2>
+                </span>
+                <span class="chairLeft seatHTML114">
+                    <p2 class="">z14</p2>
+                </span>
+                <span class="chairLeft seatHTML115">
+                    <p2 class="">z15</p2>
+                </span>
+                <span class="chairLeft seatHTML116">
+                    <p2 class="">z16</p2>
+                </span>
+                <span class="chairLeft seatHTML117">
+                    <p2 class="">z17</p2>
+                </span>
+                <span class="chairLeft seatHTML118">
+                    <p2 class="">z18</p2>
+                </span>
+                <span class="chairLeft seatHTML119">
+                    <p2 class="">z19</p2>
+                </span>
+                <span class="chairLeft seatHTML120">
+                    <p2 class="">z20</p2>
+                </span>
+                <span class="chairLeft seatHTML121">
+                    <p2 class="">z21</p2>
+                </span>
+                <span class="chairLeft seatHTML122">
+                    <p2 class="">z22</p2>
+                </span>
+                <span class="chairLeft seatHTML123">
+                    <p2 class="">z23</p2>
+                </span>
+                <span class="chairLeft seatHTML124">
+                    <p2 class="">z24</p2>
+                </span>
+                <span class="chairLeft seatHTML125">
+                    <p2 class="">z25</p2>
+                </span>
+                <span class="chairRight seatHTML126">
+                    <p2 class="">z26</p2>
+                </span>
+                <span class="chairRight seatHTML127">
+                    <p2 class="">z27</p2>
+                </span>
+                <span class="chairRight seatHTML128">
+                    <p2 class="">z28</p2>
+                </span>
+                <span class="chairRight seatHTML129">
+                    <p2 class="">z29</p2>
+                </span>
+                <span class="chairRight seatHTML130">
+                    <p2 class="">z30</p2>
+                </span>
+                <span class="chairRight seatHTML131">
+                    <p2 class="">z31</p2>
+                </span>
+                <span class="chairRight seatHTML132">
+                    <p2 class="">z32</p2>
+                </span>
+                <span class="chairRight seatHTML133">
+                    <p2 class="">z33</p2>
+                </span>
+                <span class="chairRight seatHTML134">
+                    <p2 class="">z34</p2>
+                </span>
+                <span class="chairRight seatHTML135">
+                    <p2 class="">z35</p2>
+                </span>
+                <span class="chairRight seatHTML136">
+                    <p2 class="">z36</p2>
+                </span>
+                <span class="chairRight seatHTML137">
+                    <p2 class="">z37</p2>
+                </span>
+                <span class="chairRight seatHTML138">
+                    <p2 class="">z38</p2>
+                </span>
+                <span class="chairRight seatHTML139">
+                    <p2 class="">z39</p2>
+                </span>
+                <span class="chairRight seatHTML140">
+                    <p2 class="">z40</p2>
+                </span>
+                <span class="chairRight seatHTML141">
+                    <p2 class="">z41</p2>
+                </span>
+                <span class="chairRight seatHTML142">
+                    <p2 class="">z42</p2>
+                </span>
+                <span class="chairRight seatHTML143">
+                    <p2 class="">z43</p2>
+                </span>
+                <span class="chairRight seatHTML144">
+                    <p2 class="">z44</p2>
+                </span>
+                <span class="chairRight seatHTML145">
+                    <p2 class="">z45</p2>
+                </span>
+                <span class="chairRight seatHTML146">
+                    <p2 class="">z46</p2>
+                </span>
+                <span class="chairRight seatHTML147">
+                    <p2 class="">z47</p2>
+                </span>
+                <span class="chairRight seatHTML148">
+                    <p2 class="">z48</p2>
+                </span>
+                <span class="chairRight seatHTML149">
+                    <p2 class="">z49</p2>
+                </span>
+                <span class="chairRight seatHTML150">
+                    <p2 class="">z50</p2>
+                </span>
             </div>
         </div>
 
@@ -266,43 +576,43 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
             Wybierz aby podświetlnić ------> <br>
             Znajdź się :)
         </div>
-        
-    </div>
-    
 
-        
+    </div>
+
+
+
     <!-- sekcja 5 -->
     <div class="sectionContainer" id="Organizacja">
-        
+
         Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
         <h3>Organizacją zajmuje się ten GigaChad</h3>
         <img src="img\rafal2.png" alt="Rufusik">
     </div>
-        
+
     <!-- sekcja 6 -->
     <div class="sectionContainer" id="Zdjęcia">
-        
+
         Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
         <h3>W celu obejrzenia zdjęć, naciśnij w ikonkę</h3>
-        <a href="https://media.discordapp.net/attachments/212913260578471936/959925441102221332/unknown.png"> 
+        <a href="https://media.discordapp.net/attachments/212913260578471936/959925441102221332/unknown.png">
             <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
             </svg>
         </a>
 
     </div>
 
-        <!-- sekcja 7 -->
-        <div class="sectionContainer" id="Kontakt">
-            
-            Where does it come from?
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-            <h3>Tu będzie zdjęcie kościoła, ale najpierw Gosia musi je zrobić <br>
+    <!-- sekcja 7 -->
+    <div class="sectionContainer" id="Kontakt">
+
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        <h3>Tu będzie zdjęcie kościoła, ale najpierw Gosia musi je zrobić <br>
             + lokalizacja z googleMap</h3>
-        </div>
+    </div>
 
 
 
@@ -310,4 +620,6 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 
     <div class="clear"></div>
-</body></html>
+</body>
+
+</html>
