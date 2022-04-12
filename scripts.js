@@ -39,7 +39,7 @@ for (let i = 0; i < arrayObject.length; i++) {
         ")\" id=\"" +
         arrayObject[i].id +
         "\"/>" +
-        arrayObject[i].nazwisko +
+        arrayObject[i].nick +
         "<br /></label>"
 }
 
