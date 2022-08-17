@@ -902,8 +902,9 @@ p3 {
     text-decoration: none;
     color: black;
 }
-#Zdjęcia p{
-     padding: 20px;
+
+#Zdjęcia p {
+    padding: 20px;
     width: 100%;
     text-align: center;
     font-size: 2.4vw
@@ -912,10 +913,22 @@ p3 {
 
 /* sekcja 7 */
 #Kontakt {
-    background-color: lightblue;
+        position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
+#Kontakt p {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 2.4vw
+}
+#Kontakt img
+{
+    width:100%;
+}
 
 .clear {
     clear: both;
