@@ -99,13 +99,17 @@ body {
 }
 
 .flower-line {
+    width:100%;
     font-size: 3vw;
     text-align: center;
     color: darkgreen;
     padding-bottom: 30px;
 }
 
-
+.flower-line-img
+{
+    width:15%;
+}
 /* tytuł i nawbar */
 .title {
     position: relative;
@@ -925,7 +929,7 @@ p3 {
     text-align: center;
     font-size: 2.4vw
 }
-#Kontakt img
+.kontakt-img
 {
     width:100%;
 }
