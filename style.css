@@ -913,7 +913,9 @@ p3 {
     text-align: center;
     font-size: 2.4vw
 }
-
+.form-icon{
+    width: 250px;
+}
 
 /* sekcja 7 */
 #Kontakt {
