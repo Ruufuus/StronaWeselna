@@ -421,7 +421,7 @@ p3 {
     /* background-color: red; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between
     /* column-gap: 50px; */
 }
 
