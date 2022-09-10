@@ -353,7 +353,7 @@ h3 {
     height: auto;
     padding: 5vh 0;
     justify-content: space-evenly;
-    background-color: rgb(9, 255, 0);
+    /* background-color: rgb(9, 255, 0); */
 }
 
 
@@ -400,7 +400,7 @@ p3 {
     height: auto;
     padding: 5vh 0;
     justify-content: space-evenly;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 @media (max-width: 600px) {
@@ -418,7 +418,7 @@ p3 {
 .tableSplit {
     height: auto;
     width: auto;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -481,6 +481,12 @@ p3 {
     align-items: center;
     justify-content: center;
 }
+
+.tableText {
+    font-weight: 900;
+    font-size: 4vw;
+}
+
 .bossTableTable {
     grid-area: 1 / 1 / 5 / 2;
 }
@@ -504,8 +510,75 @@ p3 {
     height: 400px;
     width: 200px;
     overflow-y: scroll;
+    overflow-x: clip;
     z-index: 20;
-    border: 2px solid #ccc;
+    border: 2px solid rgb(109, 109, 109);
+
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255,255,255,.8));
+    /* overflow: hidden; */
+    box-shadow: 
+        -2px -2px 6px rgba(#fff, .6),
+        2px 2px 12px #c8d8e7;
+}
+
+label input {
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.guestSerchBar label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 2px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+    transition: 
+        transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), 
+        box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+    background-color: #fff;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.guestSerchBar label:hover {
+    transform: scale(1.05);
+    box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
+
+.labelBackground {
+    background: radial-gradient(circle,
+     rgba(249,255,14,1) 0%,
+     rgba(249,255,14,0.37) 68%) !important;
+}
+
+.guestSerchBar > input {
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.labelTitle {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: 8px 0;
+    /* background-color: rgb(108, 108, 218); */
+}
+
+.labelNick {
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+    margin: 2.5px;
+}
+
+.A, .B, .C, .D, .E {
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+    margin: 0 8px 0 0;
 }
 
 @media (max-width: 600px) {
@@ -967,6 +1040,4 @@ p3 {
     justify-content: center;
 }
 
-input {
-    
-}
+

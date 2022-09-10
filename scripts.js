@@ -12,7 +12,8 @@ for (let i = 0; i < p2List.length; i++) {
     arrayObject[i] = {
         "nick": p2List[i].outerText,
         "id": "seat" + [(i + 1)],
-        "number": (i + 1)
+        "number": (i + 1),
+        "table": p2List[i].id,
     }
 }
 
@@ -28,29 +29,65 @@ function compare(a, b) {
     return 0;
 }
 arrayObject.sort(compare);
-// console.log("arrayObject",arrayObject)
+console.log("arrayObject",arrayObject)
 
+// renderowanie tytułu listy
+serchbar.innerHTML +=
+"<div class=\"labelTitle\">" +
+"<span>Imię Nazwisko</span>" +
+"<span>Stół</span>" +
+"</div>";
 
 // renderowanie listy
 for (let i = 0; i < arrayObject.length; i++) {
     serchbar.innerHTML +=
+
+        // "<label class=\"label" +
+        // [i] +
+        // "\"><input type=\"checkbox\" onclick=\"addAtributeSeat(" +
+        // arrayObject[i].number +
+        // ")\" id=\"" +
+        // arrayObject[i].id +
+        // "\">" +
+
+        //html code
         "<label><input type=\"checkbox\" onclick=\"addAtributeSeat(" +
         arrayObject[i].number +
         ")\" id=\"" +
         arrayObject[i].id +
-        "\"/>" +
+        "\">" +
+
+        // wyświetlanie imienia i nazwiska
+        "<span class=\"labelNick\">" +
         arrayObject[i].nick +
+        "</span>" +
+
+        // wyświetlanie nr stołu
+        "<span class=\"" +
+        arrayObject[i].table +
+        "\">" +
+        arrayObject[i].table +
+        "</span>" +
+        
         "<br /></label>"
 }
 
-// podswietlanie osoby z listy
+
 function addAtributeSeat(numb) {
-    let seat = document.querySelector('.seatHTML' + numb)
+    // podswietlanie osoby z listy
+    let seat = document.querySelector('.seatHTML' + numb);
     seat.classList.toggle('checkOn');
+
+    // podswietlanie osoby na liście
+    var id = document.querySelector('#seat'+ numb);
+    id.parentElement.classList.toggle('labelBackground');
 }
 
-//dodawanie underline do sekcji w której jestesmy
 
+
+
+
+//dodawanie underline do sekcji w której jestesmy
 function underlineMenuItem() {
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
