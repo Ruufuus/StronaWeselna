@@ -982,6 +982,12 @@ label input {
     font-size: 2.4vw
 }
 
+#Organizacja .menu-eat p{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.8vw;
+}
 
 /* sekcja 6 */
 
