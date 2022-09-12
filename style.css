@@ -16,7 +16,7 @@ body {
 }
 
 
-/* ToDo Lista */
+/* ToDo Lista
 .toDoIcon {
     position: fixed;
     left: 1vw;
@@ -51,7 +51,7 @@ body {
 .toDoCheckbox:checked + .toDoList {
     display: block;
 }
-
+*/
 /* kwiatki */
 .flowersContainerLeft {
     position: fixed;
