@@ -99,24 +99,23 @@ body {
 }
 
 .flower-line {
-    width:100%;
+    width: 100%;
     font-size: 3vw;
     text-align: center;
     color: darkgreen;
     padding-bottom: 30px;
 }
 
-.flower-line-img
-{
-    width:15%;
+.flower-line-img {
+    width: 15%;
 }
+
 /* tytuł i nawbar */
 .title {
     position: relative;
     width: 100%;
     margin: 25vh 0px 0px 0px;
     top: 0;
-
     text-align: center;
 
 }
@@ -197,8 +196,18 @@ h1 {
 
 
 @media (max-width: 600px) {
+    h1 {
+        font-size: 14vw;
+    }
+
     .menu {
         width: 100vw;
+        z-index: 200;
+    }
+
+    .menu ul li a {
+        font-size: 2.45vw;
+
     }
 }
 
@@ -218,6 +227,7 @@ h1 {
 @media (max-width: 600px) {
     .sectionContainer {
         margin: 0;
+        padding: 6vh 5px;
         width: 100vw;
     }
 
@@ -247,12 +257,7 @@ h1 {
     margin: 50vh 15vw 0 15vw;
 }
 
-@media (max-width: 600px) {
-    .section1 {
-        margin: 50vh 0 0 0;
-        background-color: red;
-    }
-}
+
 
 h3 {
     text-align: center;
@@ -276,6 +281,28 @@ h3 {
 
 }
 
+@media (max-width: 600px) {
+    .slub {
+        grid-template-columns: 1fr;
+        /* set column sizes here */
+        grid-template-rows: auto auto auto auto;
+        grid-gap: 0px;
+    }
+
+    .section1 {
+        margin: 50vh 0 0 0;
+
+    }
+
+    .name-church {
+        display: none;
+    }
+
+    .hour-church {
+        padding: 10px;
+        font-size: 5vw
+    }
+}
 
 /* sekcja 2 */
 #Wesele {}
@@ -309,6 +336,29 @@ h3 {
 
 }
 
+@media (max-width: 600px) {
+    .wesele {
+        grid-template-columns: 1fr;
+        /* set column sizes here */
+        grid-template-rows: auto auto auto auto;
+        grid-gap: 0px;
+    }
+
+    .section1 {
+        margin: 50vh 0 0 0;
+
+    }
+
+
+    .name-hall {
+        display: none;
+    }
+
+    .hour-hall {
+        padding: 10px;
+        font-size: 5vw
+    }
+}
 
 /* sekcja 3 */
 #PlanWesela {}
@@ -320,6 +370,11 @@ h3 {
     font-size: 2.4vw
 }
 
+@media (max-width: 600px) {
+    #PlanWesela p {
+        font-size: 5vw;
+    }
+}
 
 /* sekcja 4 */
 /* .roomContainer {
@@ -422,7 +477,7 @@ p3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between
-    /* column-gap: 50px; */
+        /* column-gap: 50px; */
 }
 
 .guestTable {
@@ -490,6 +545,7 @@ p3 {
 .bossTableTable {
     grid-area: 1 / 1 / 5 / 2;
 }
+
 .bossTable p {
     display: flex;
     align-items: center;
@@ -516,9 +572,9 @@ p3 {
 
     padding: 10px;
     border-radius: 10px;
-    background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255,255,255,.8));
+    background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255, 255, 255, .8));
     /* overflow: hidden; */
-    box-shadow: 
+    box-shadow:
         -2px -2px 6px rgba(#fff, .6),
         2px 2px 12px #c8d8e7;
 }
@@ -535,8 +591,8 @@ label input {
     margin: 2px 0;
     border-radius: 10px;
     box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
-    transition: 
-        transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), 
+    transition:
+        transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98),
         box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
     background-color: #fff;
     border: 1px solid rgb(180, 180, 180);
@@ -549,8 +605,8 @@ label input {
 
 .labelBackground {
     background: radial-gradient(circle,
-     rgba(249,255,14,1) 0%,
-     rgba(249,255,14,0.37) 68%) !important;
+            rgba(249, 255, 14, 1) 0%,
+            rgba(249, 255, 14, 0.37) 68%) !important;
 }
 
 .guestSerchBar > input {
@@ -574,7 +630,11 @@ label input {
     margin: 2.5px;
 }
 
-.A, .B, .C, .D, .E {
+.A,
+.B,
+.C,
+.D,
+.E {
     display: flex;
     width: 20%;
     justify-content: flex-end;
@@ -954,12 +1014,15 @@ label input {
 .seatHTML151 {
     grid-area: 1 / 2 / 2 / 3;
 }
+
 .seatHTML152 {
     grid-area: 2 / 2 / 3 / 3;
 }
+
 .seatHTML153 {
     grid-area: 3 / 2 / 4 / 3;
 }
+
 .seatHTML154 {
     grid-area: 4 / 2 / 5 / 3;
 }
@@ -982,11 +1045,36 @@ label input {
     font-size: 2.4vw
 }
 
-#Organizacja .menu-eat p{
-    padding: 20px;
+#Organizacja .menu-eat p {
+    padding: 10px;
     width: 100%;
     text-align: center;
     font-size: 1.8vw;
+}
+#Organizacja .menu-eat .p-title{
+     font-weight: bold;
+    font-size:2.4vw;
+}
+#Organizacja .menu-eat .p-eat{
+    font-weight: bold;
+    font-size:2.1vw;
+    padding-top: 40px;
+}
+@media (max-width: 600px) {
+    #Organizacja p {
+        font-size: 5vw;
+    }
+    #Organizacja .menu-eat p {
+        padding: 10px;
+        font-size: 4vw;
+    }
+    #Organizacja .menu-eat .p-title{
+    font-size:5vw;
+}
+    #Organizacja .menu-eat .p-eat{
+        padding-top: 40px;
+        font-size: 4.7vw;
+    }
 }
 
 /* sekcja 6 */
@@ -1010,13 +1098,18 @@ label input {
     text-align: center;
     font-size: 2.4vw
 }
-.form-icon{
+
+.form-icon {
     width: 250px;
 }
-
+@media (max-width: 600px) {
+    #Zdjęcia p {
+        font-size: 5vw;
+    }
+}
 /* sekcja 7 */
 #Kontakt {
-        position: relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1028,11 +1121,15 @@ label input {
     text-align: center;
     font-size: 2.4vw
 }
-.kontakt-img
-{
-    width:100%;
-}
 
+.kontakt-img {
+    width: 100%;
+}
+@media (max-width: 600px) {
+    #Kontakt p {
+        font-size: 5vw;
+    }
+}
 .clear {
     clear: both;
 }
@@ -1045,5 +1142,3 @@ label input {
     align-items: center;
     justify-content: center;
 }
-
-
