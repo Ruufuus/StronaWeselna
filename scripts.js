@@ -129,10 +129,14 @@ var x = setInterval(function () {
     var seconds = Math.floor((distance % (minute)) / second);
 
     // Output the result
+if(now < weddingDate ){
     document.getElementById("days").innerHTML = days + "d";
     document.getElementById("hours").innerHTML = hours + "h";
     document.getElementById("minutes").innerHTML = minutes + "m";
     document.getElementById("seconds").innerHTML = seconds + "s";
+}else{
+    document.getElementsByClassName("timer-title")[0].innerHTML="";
+}
 }, second);
 
 function find() {

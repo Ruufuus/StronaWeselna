@@ -206,7 +206,9 @@ h1 {
     }
 
     .menu ul li a {
-        font-size: 2.45vw;
+        font-size: 2.35vw;
+        padding-top:5px;
+        padding-bottom:5px;
 
     }
     .timer-title,.timer div {
