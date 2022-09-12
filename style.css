@@ -508,9 +508,11 @@ p3 {
 }
 
 .guestTable span p2 {
-    color: gray;
-    opacity: 0.6;
+    color: black;
+    font-weight: bold;
+    opacity: 1;
     font-size: 0.8rem;
+    z-index: 500;
 }
 
 .guestTable .checkOn,
