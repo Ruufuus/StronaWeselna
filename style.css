@@ -450,7 +450,16 @@ p3 {
 .bossTextRotate,
 .bossTableText {
     transform: rotate(-90deg)
-        /* translateX(-20px); */
+}
+
+.bossTextRotate {
+    transform: rotate(-90deg)
+        translateY(55px);
+}
+
+.bossTextRotate > p3 {
+    text-shadow: none;
+    font-weight: 900;
 }
 
 .guestContainer {
@@ -533,7 +542,7 @@ p3 {
 
 .tableTable {
     grid-area: 1 / 2 / 26 / 4;
-    background-color: #663300;
+    background-color: #9C764F;
     width: 100%;
     border-radius: 50px;
     border: 2px solid black;
@@ -566,12 +575,17 @@ p3 {
     display: none;
 }
 
+.guestSerchBarContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .guestSerchBar {
-    position: absolute;
-    top: 4vh;
-    right: -13vw;
+    position: relative;
+
     height: 400px;
-    width: 200px;
+    width: clamp(300px, 30vw, 400px);
+
     overflow-y: scroll;
     overflow-x: clip;
     z-index: 20;
@@ -584,6 +598,7 @@ p3 {
     box-shadow:
         -2px -2px 6px rgba(#fff, .6),
         2px 2px 12px #c8d8e7;
+
 }
 
 label input {
@@ -649,14 +664,7 @@ label input {
 }
 
 @media (max-width: 600px) {
-    .guestSerchBar {
-        position: relative;
-        top: 0;
-        left: 15vw;
-        right: 0;
-        height: 30vh;
-        width: 70vw;
-    }
+
 
     .arrow {
         display: none;
@@ -677,7 +685,7 @@ label input {
     height: clamp(25px, 2.7vw, 45px);
     left: clamp(3px, 0.6vw, 0.6vw);
     width: clamp(30px, 2.9vw, 50px);
-    background-color: #841010;
+    background-color: #C09162;
     opacity: 1;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -702,7 +710,7 @@ label input {
     height: clamp(25px, 2.7vw, 45px);
     right: clamp(3px, 0.6vw, 0.6vw);
     width: clamp(30px, 2.9vw, 50px);
-    background-color: #841010;
+    background-color: #C09162;
     opacity: 1;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
