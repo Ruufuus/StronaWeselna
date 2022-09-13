@@ -404,6 +404,8 @@ h3 {
     display: grid;
     justify-items: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bossContainer {
@@ -465,7 +467,6 @@ p3 {
 
 .guestContainer {
     position: relative;
-    display: flex;
     width: 70vw;
     height: auto;
     padding: 5vh 0;
@@ -498,11 +499,10 @@ p3 {
 .guestTable {
     width: 20vw;
     height: auto;
-
     grid-template-columns: 30% 20% 20% 30%;
     grid-template-rows: auto-fill;
-    grid-column-gap: 5px;
-    grid-row-gap: clamp(40px, 5.5vw, 65px);
+    grid-column-gap: 20px;
+    grid-row-gap:20px;
 
 }
 
@@ -511,7 +511,6 @@ p3 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
     font-weight: 100;
     opacity: 0.7;
     font-size: 1.2rem;
@@ -521,26 +520,24 @@ p3 {
     color: black;
     font-weight: bold;
     opacity: 1;
-    font-size: clamp(0.6rem, 3vw, 1.2rem);
+    font-size: 1.vw;
     z-index: 500;
-    transform: translateY(clamp(25px, 2.7vw, 45px));
+    word-wrap: break-word;
+    min-width:350%;
 }
+
 
 .guestTable .checkOn,
 .guestTable .checkOn p2 {
     color: black;
-    font-weight: 600;
     opacity: 1;
-    text-transform: uppercase;
     text-shadow: 0px 0px 6px RGBA(255, 255, 0, 1);
-    font-family: 'Kanit', sans-serif;
 
 }
 
 .guestTable .checkOn p2 {
     z-index: 20;
-    
-    font-size: clamp(0.8rem, 3vw, 1.3rem);
+    font-size: 1.1vw;
 }
 
 .tableTable {
@@ -688,7 +685,9 @@ label input {
     justify-items: end;
     margin: clamp(5px, 0.4vw, 10px) 0px;
 }
-
+.chairLeft p2{
+    transform: translateX(-100px);
+}
 .chairLeft:before {
     content: "";
     position: absolute;
@@ -713,7 +712,9 @@ label input {
     border: 2px solid black;
     margin: clamp(5px, 0.4vw, 10px) 0px;
 }
-
+.chairRight p2{
+    transform: translateX(140px);
+}
 .chairRight:after {
     content: "";
     position: absolute;
