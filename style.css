@@ -436,7 +436,7 @@ h3 {
 
 .bossTableText {
     position: absolute;
-
+    border: 5px 0;
 }
 
 p3 {
@@ -449,7 +449,8 @@ p3 {
 
 .bossTextRotate,
 .bossTableText {
-    transform: rotate(-90deg)
+    transform: rotate(-90deg);
+    padding: 5px;
 }
 
 .bossTextRotate {
@@ -501,14 +502,14 @@ p3 {
     grid-template-columns: 30% 20% 20% 30%;
     grid-template-rows: auto-fill;
     grid-column-gap: 5px;
-    grid-row-gap: 13px;
+    grid-row-gap: clamp(40px, 5.5vw, 65px);
 
 }
 
 
 .guestTable span {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     font-weight: 100;
@@ -522,6 +523,7 @@ p3 {
     opacity: 1;
     font-size: clamp(0.6rem, 3vw, 1.2rem);
     z-index: 500;
+    transform: translateY(clamp(25px, 2.7vw, 45px));
 }
 
 .guestTable .checkOn,
@@ -648,21 +650,12 @@ label input {
 
 .labelNick {
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-content: flex-start;
     margin: 2.5px;
 }
 
-.A,
-.B,
-.C,
-.D,
-.E {
-    display: flex;
-    width: 20%;
-    justify-content: flex-end;
-    margin: 0 8px 0 0;
-}
+
 
 /* @media (max-width: 600px) {
 
@@ -699,6 +692,7 @@ label input {
 .chairLeft:before {
     content: "";
     position: absolute;
+    top: -2px;
     left: -9px;
     height: clamp(25px, 2.7vw, 45px);
     width: 8px;
@@ -723,6 +717,7 @@ label input {
 .chairRight:after {
     content: "";
     position: absolute;
+    top: -2px;
     right: -9px;
     height: clamp(25px, 2.7vw, 45px);
     width: 8px;
