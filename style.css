@@ -133,7 +133,7 @@ h1 {
     width: 70vw;
     top: 0px;
     left: 15vw;
-    z-index: 5;
+    z-index: 200;
     background-color: #fffde9;
     box-shadow: 0px 25px 21px -20px rgba(66, 68, 90, 1);
     padding: 1vh 0;
@@ -520,7 +520,7 @@ p3 {
     color: black;
     font-weight: bold;
     opacity: 1;
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, 3vw, 1.2rem);
     z-index: 500;
 }
 
@@ -537,11 +537,12 @@ p3 {
 
 .guestTable .checkOn p2 {
     z-index: 20;
-    font-size: 1.1rem;
+    
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
 }
 
 .tableTable {
-    grid-area: 1 / 2 / 26 / 4;
+    grid-area: 1 / 2 / 25 / 4;
     background-color: #9C764F;
     width: 100%;
     border-radius: 50px;
@@ -663,12 +664,8 @@ label input {
     margin: 0 8px 0 0;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 
-
-    .arrow {
-        display: none;
-    }
 
     .guestSerchBarTitle {
         display: block;
@@ -676,9 +673,14 @@ label input {
         margin: 2vh 0;
         font-size: 1.1rem;
     }
+} */
+
+.guestSerchBarTitle {
+    display: block;
+    text-align: center;
+    margin: 2vh 0;
+    font-size: 1.4rem;
 }
-
-
 
 .chairLeft {
     position: relative;
