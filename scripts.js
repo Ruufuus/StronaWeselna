@@ -20,10 +20,10 @@ for (let i = 0; i < p2List.length; i++) {
 
 // sortowanie alfabetyczne
 function compare(a, b) {
-    if (a.nick < b.nick) {
+    if (a.table < b.table) {
         return -1;
     }
-    if (a.nick > b.nick) {
+    if (a.table > b.table) {
         return 1;
     }
     return 0;
