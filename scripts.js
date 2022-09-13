@@ -29,14 +29,14 @@ function compare(a, b) {
     return 0;
 }
 arrayObject.sort(compare);
-console.log("arrayObject",arrayObject)
+console.log("arrayObject", arrayObject)
 
 // renderowanie tytułu listy
 serchbar.innerHTML +=
-"<div class=\"labelTitle\">" +
-"<span>Imię Nazwisko</span>" +
-"<span>Stół</span>" +
-"</div>";
+    "<div class=\"labelTitle\">" +
+    "<span>Imię Nazwisko</span>" +
+    "<span>Stół</span>" +
+    "</div>";
 
 // renderowanie listy
 for (let i = 0; i < arrayObject.length; i++) {
@@ -68,7 +68,7 @@ for (let i = 0; i < arrayObject.length; i++) {
         "\">" +
         arrayObject[i].table +
         "</span>" +
-        
+
         "<br /></label>"
 }
 
@@ -79,7 +79,7 @@ function addAtributeSeat(numb) {
     seat.classList.toggle('checkOn');
 
     // podswietlanie osoby na liście
-    var id = document.querySelector('#seat'+ numb);
+    var id = document.querySelector('#seat' + numb);
     id.parentElement.classList.toggle('labelBackground');
 }
 
@@ -129,14 +129,14 @@ var x = setInterval(function () {
     var seconds = Math.floor((distance % (minute)) / second);
 
     // Output the result
-if(now < weddingDate ){
-    document.getElementById("days").innerHTML = days + "d";
-    document.getElementById("hours").innerHTML = hours + "h";
-    document.getElementById("minutes").innerHTML = minutes + "m";
-    document.getElementById("seconds").innerHTML = seconds + "s";
-}else{
-    document.getElementsByClassName("timer-title")[0].innerHTML="";
-}
+    if (now < weddingDate) {
+        document.getElementById("days").innerHTML = days + "d";
+        document.getElementById("hours").innerHTML = hours + "h";
+        document.getElementById("minutes").innerHTML = minutes + "m";
+        document.getElementById("seconds").innerHTML = seconds + "s";
+    } else {
+        document.getElementsByClassName("timer-title")[0].innerHTML = "";
+    }
 }, second);
 
 function find() {
@@ -164,27 +164,28 @@ function resizemap() {
     document.getElementById("hall-map").height = hallimgheight;
 
 }
+
 function hasTouch() {
-  return 'ontouchstart' in document.documentElement
-         || navigator.maxTouchPoints > 0
-         || navigator.msMaxTouchPoints > 0;
+    return 'ontouchstart' in document.documentElement ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0;
 }
 
 if (hasTouch()) { // remove all the :hover stylesheets
-  try { // prevent exception on browsers not supporting DOM styleSheets properly
-    for (var si in document.styleSheets) {
-      var styleSheet = document.styleSheets[si];
-      if (!styleSheet.rules) continue;
+    try { // prevent exception on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) continue;
 
-      for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-        if (!styleSheet.rules[ri].selectorText) continue;
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) continue;
 
-        if (styleSheet.rules[ri].selectorText.match(':hover')) {
-          styleSheet.deleteRule(ri);
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
         }
-      }
-    }
-  } catch (ex) {}
+    } catch (ex) {}
 }
 window.addEventListener('load', resizemap);
 window.addEventListener('resize', resizemap);
