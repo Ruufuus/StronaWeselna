@@ -105,13 +105,18 @@ function addAtributeSeat(numb, tableNumber) {
 
 //dodawanie underline do sekcji w której jestesmy
 function underlineMenuItem() {
+    var menu = document.querySelector('.menu');
+    if (menu.getBoundingClientRect().top <= 0 ) {
+        menu.classList.add("sticky")
+      } else {
+        menu.classList.remove("sticky");
+      }
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
-    var menuheight = document.querySelector('.menu').offsetHeight;
+    var menuheight = menu.offsetHeight;
     for (var i = 0; i < sections.length; i++) {
-        var windowHeight = window.innerHeight;
         var elementTop = sections[i].getBoundingClientRect().top;
-        if (elementTop + windowHeight - menuheight < windowHeight) {
+        if (elementTop - menuheight < 0) {
             menuitems[i].classList.add("active");
             if (i > 0) {
                 menuitems[i - 1].classList.remove("active");
