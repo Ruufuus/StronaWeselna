@@ -42,7 +42,7 @@ for (let i = 0; i < arrayObject.length; i++) {
     if (arrayObject[i].nick.toUpperCase() != "OSOBA TOWARZYSZĄCA") {
         serchbar.innerHTML +=
 
- 
+
 
             //html code
             "<label class=\"listElements\" id=\"" +
@@ -72,12 +72,13 @@ function addAtributeSeat(numb, tableNumber) {
     let seats = [document.getElementsByClassName('chairRight'), document.getElementsByClassName('chairLeft')]
     for (let i = 0; i < seats.length; i++) {
         for (let j = 0; j < seats[i].length; j++) {
-            seats[i][j].classList.remove("checkOn");
+            if (seats[i][j].classList.contains('seatHTML' + numb)) {
+                seats[i][j].classList.toggle("checkOn");
+            } else {
+                seats[i][j].classList.remove("checkOn");
+            }
         }
     }
-    let seat = document.getElementsByClassName('seatHTML' + numb).item(0)
-    seat.classList.add('checkOn');
-    console.log(seat)
     let tables = document
         .getElementsByClassName("table")
     for (let i = 0; i < tables.length; i++) {
@@ -200,7 +201,7 @@ if (hasTouch()) { // remove all the :hover stylesheets
                 }
             }
         }
-    } catch (ex) {}
+    } catch (ex) { }
 }
 window.addEventListener('load', resizemap);
 window.addEventListener('resize', resizemap);
