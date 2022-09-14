@@ -143,10 +143,7 @@ h1 {
 .sticky {
     position: fixed;
     top: 0;
-<<<<<<< HEAD
     margin: 0 auto 0 auto;
-=======
->>>>>>> 266f2bc6126ebd7be44b273523e546702e7d7f27
     z-index: 1005;
 }
 
@@ -480,9 +477,10 @@ p3 {
 
 .guestPreviewContainer {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 3fr 1fr 3fr;
     /* set column sizes here */
     grid-template-rows: 3fr 1fr 2fr 1fr;
+    margin: 40px;
 }
 
 @media (max-width: 600px) {
@@ -1203,7 +1201,7 @@ label input {
     grid-column-end: 1;
     grid-row-start: 3;
     grid-row-end: 4;
-     width: 8vh;
+    width: 4vw;
     margin-left: auto;
 
 
@@ -1214,7 +1212,7 @@ label input {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
-   width: 8vh;
+    width: 4vw;
     margin-left: auto;
     margin-right: auto;
 
@@ -1225,7 +1223,7 @@ label input {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 8vh;
+    width: 4vw;
     margin-right: auto;
 
 
@@ -1236,7 +1234,7 @@ label input {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-   width: 8vh;
+    width: 4vw;
     margin-left: auto;
 
 }
@@ -1246,7 +1244,7 @@ label input {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    width: 8vh;
+    width: 4vw;
     margin-right: auto;
 
 }
@@ -1256,13 +1254,21 @@ label input {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
-    margin-top:20px;
-    height: 75px;
+    margin-top: 20px;
+    height: 4vw;
 
 }
 
 .prev-table {
-        background-color: #9C764F;
-        border:black 1px solid;
-        border-radius: 10px;
+    display: flex;
+    background-color: #9C764F;
+    border: black 1px solid;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 35px;
 }
