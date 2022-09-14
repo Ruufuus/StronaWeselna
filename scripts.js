@@ -81,10 +81,12 @@ function addAtributeSeat(numb, tableNumber) {
     }
     let tables = document
         .getElementsByClassName("table")
+    let choosenSit = document
+        .getElementsByClassName('seatHTML' + numb).item(0)
     for (let i = 0; i < tables.length; i++) {
-        if (tables[i].id != tableNumber) {
+        if (tables[i].id != tableNumber || !choosenSit.classList.contains("checkOn")) {
             tables[i].style.display = "none"
-        } else {
+        } else { 
             tables[i].style.display = "grid"
         }
     }
