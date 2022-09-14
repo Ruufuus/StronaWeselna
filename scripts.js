@@ -105,12 +105,14 @@ function addAtributeSeat(numb, tableNumber) {
 
 //dodawanie underline do sekcji w której jestesmy
 function underlineMenuItem() {
+    var title = document.querySelector('.title');
     var menu = document.querySelector('.menu');
-    if (menu.getBoundingClientRect().top <= 0 ) {
+    if (title.getBoundingClientRect().bottom < 0 ) {
         menu.classList.add("sticky")
       } else {
         menu.classList.remove("sticky");
       }
+
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
     var menuheight = menu.offsetHeight;
