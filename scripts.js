@@ -179,10 +179,11 @@ function resizemap() {
     document.getElementById("hall-map").height = hallimgheight;
 
 }
+
 function hasTouch() {
-    return 'ontouchstart' in document.documentElement
-        || navigator.maxTouchPoints > 0
-        || navigator.msMaxTouchPoints > 0;
+    return 'ontouchstart' in document.documentElement ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0;
 }
 
 if (hasTouch()) { // remove all the :hover stylesheets
@@ -199,7 +200,7 @@ if (hasTouch()) { // remove all the :hover stylesheets
                 }
             }
         }
-    } catch (ex) { }
+    } catch (ex) {}
 }
 window.addEventListener('load', resizemap);
 window.addEventListener('resize', resizemap);

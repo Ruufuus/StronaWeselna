@@ -526,8 +526,7 @@ p3 {
     opacity: 1;
     font-size: 1.vw;
     z-index: 500;
-    word-wrap: break-word;
-    min-width:350%;
+    min-width:280%;
 }
 
 
@@ -731,7 +730,7 @@ label input {
     margin: clamp(5px, 0.4vw, 10px) 0px;
 }
 .chairRight p2{
-    transform: translateX(140px);
+    transform: translateX(120px);
 }
 .chairRight:after {
     content: "";
