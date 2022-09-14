@@ -24,7 +24,6 @@ function centerTables() {
         let table = document.getElementById(tableId)
         chairWidth = chair.offsetWidth
         table.style.transform = "translateX(-" + chairWidth + "px)"
-        console.log("translateX(-" + chairWidth + ")")
     }
 }
 

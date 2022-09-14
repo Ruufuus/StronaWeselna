@@ -143,7 +143,10 @@ h1 {
 .sticky {
     position: fixed;
     top: 0;
+<<<<<<< HEAD
     margin: 0 auto 0 auto;
+=======
+>>>>>>> 266f2bc6126ebd7be44b273523e546702e7d7f27
     z-index: 1005;
   }
 
@@ -413,6 +416,7 @@ h3 {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 .bossContainer {
@@ -608,6 +612,7 @@ p3 {
     border: 2px solid rgb(109, 109, 109);
 
     padding: 0 10px 10px 10px;
+    margin-bottom: 50px;
     border-radius: 10px;
     background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255, 255, 255, .8));
     /* overflow: hidden; */
@@ -660,7 +665,7 @@ label input {
     border: 1px solid rgb(180, 180, 180);
     border-radius: 4px;
     width:calc(100% + 20px);
-    font-size:1.4vw;
+    font-size:23px;
     height: 8%;
 }
 
