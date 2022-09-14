@@ -29,58 +29,73 @@ function compare(a, b) {
     return 0;
 }
 arrayObject.sort(compare);
-console.log("arrayObject",arrayObject)
 
 // renderowanie tytułu listy
 serchbar.innerHTML +=
-"<div class=\"labelTitle\">" +
-"<span>Imię Nazwisko</span>" +
-"<span>Stół</span>" +
-"</div>";
+    "<div class=\"labelTitle\">" +
+    "<span>Imię Nazwisko</span>" +
+    "<span>Stół</span>" +
+    "</div>";
 
 // renderowanie listy
 for (let i = 0; i < arrayObject.length; i++) {
-    serchbar.innerHTML +=
+    if (arrayObject[i].nick.toUpperCase() != "OSOBA TOWARZYSZĄCA") {
+        serchbar.innerHTML +=
 
-        // "<label class=\"label" +
-        // [i] +
-        // "\"><input type=\"checkbox\" onclick=\"addAtributeSeat(" +
-        // arrayObject[i].number +
-        // ")\" id=\"" +
-        // arrayObject[i].id +
-        // "\">" +
+ 
 
-        //html code
-        "<label><input type=\"checkbox\" onclick=\"addAtributeSeat(" +
-        arrayObject[i].number +
-        ")\" id=\"" +
-        arrayObject[i].id +
-        "\">" +
+            //html code
+            "<label class=\"listElements\" id=\"" +
+            arrayObject[i].id + "\"onclick=\"addAtributeSeat(" +
+            arrayObject[i].number + "," + arrayObject[i].table +
+            ")\">" +
 
-        // wyświetlanie imienia i nazwiska
-        "<span class=\"labelNick\">" +
-        arrayObject[i].nick +
-        "</span>" +
+            // wyświetlanie imienia i nazwiska
+            "<span class=\"labelNick\">" +
+            arrayObject[i].nick +
+            "</span>" +
 
-        // wyświetlanie nr stołu
-        "<span class=\"" +
-        arrayObject[i].table +
-        "\">" +
-        arrayObject[i].table +
-        "</span>" +
-        
-        "<br /></label>"
+            // wyświetlanie nr stołu
+            "<span class=\"" +
+            arrayObject[i].table +
+            "\">" +
+            arrayObject[i].table +
+            "</span>" +
+
+            "<br /></label>"
+    }
 }
 
 
-function addAtributeSeat(numb) {
+function addAtributeSeat(numb, tableNumber) {
     // podswietlanie osoby z listy
-    let seat = document.querySelector('.seatHTML' + numb);
-    seat.classList.toggle('checkOn');
-
+    let seats = [document.getElementsByClassName('chairRight'), document.getElementsByClassName('chairLeft')]
+    for (let i = 0; i < seats.length; i++) {
+        for (let j = 0; j < seats[i].length; j++) {
+            seats[i][j].classList.remove("checkOn");
+        }
+    }
+    let seat = document.getElementsByClassName('seatHTML' + numb).item(0)
+    seat.classList.add('checkOn');
+    console.log(seat)
+    let tables = document
+        .getElementsByClassName("table")
+    for (let i = 0; i < tables.length; i++) {
+        if (tables[i].id != tableNumber) {
+            tables[i].style.display = "none"
+        } else {
+            tables[i].style.display = "grid"
+        }
+    }
     // podswietlanie osoby na liście
-    var id = document.querySelector('#seat'+ numb);
-    id.parentElement.classList.toggle('labelBackground');
+    var listElements = document.getElementsByClassName("listElements")
+    for (let i = 0; i < listElements.length; i++) {
+        if (listElements[i].id == "seat" + numb) {
+            listElements[i].classList.toggle('labelBackground')
+        } else {
+            listElements[i].classList.remove('labelBackground');
+        }
+    }
 }
 
 
@@ -129,14 +144,14 @@ var x = setInterval(function () {
     var seconds = Math.floor((distance % (minute)) / second);
 
     // Output the result
-if(now < weddingDate ){
-    document.getElementById("days").innerHTML = days + "d";
-    document.getElementById("hours").innerHTML = hours + "h";
-    document.getElementById("minutes").innerHTML = minutes + "m";
-    document.getElementById("seconds").innerHTML = seconds + "s";
-}else{
-    document.getElementsByClassName("timer-title")[0].innerHTML="";
-}
+    if (now < weddingDate) {
+        document.getElementById("days").innerHTML = days + "d";
+        document.getElementById("hours").innerHTML = hours + "h";
+        document.getElementById("minutes").innerHTML = minutes + "m";
+        document.getElementById("seconds").innerHTML = seconds + "s";
+    } else {
+        document.getElementsByClassName("timer-title")[0].innerHTML = "";
+    }
 }, second);
 
 function find() {
@@ -165,26 +180,26 @@ function resizemap() {
 
 }
 function hasTouch() {
-  return 'ontouchstart' in document.documentElement
-         || navigator.maxTouchPoints > 0
-         || navigator.msMaxTouchPoints > 0;
+    return 'ontouchstart' in document.documentElement
+        || navigator.maxTouchPoints > 0
+        || navigator.msMaxTouchPoints > 0;
 }
 
 if (hasTouch()) { // remove all the :hover stylesheets
-  try { // prevent exception on browsers not supporting DOM styleSheets properly
-    for (var si in document.styleSheets) {
-      var styleSheet = document.styleSheets[si];
-      if (!styleSheet.rules) continue;
+    try { // prevent exception on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) continue;
 
-      for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-        if (!styleSheet.rules[ri].selectorText) continue;
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) continue;
 
-        if (styleSheet.rules[ri].selectorText.match(':hover')) {
-          styleSheet.deleteRule(ri);
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
         }
-      }
-    }
-  } catch (ex) {}
+    } catch (ex) { }
 }
 window.addEventListener('load', resizemap);
 window.addEventListener('resize', resizemap);
