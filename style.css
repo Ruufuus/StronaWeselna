@@ -143,6 +143,10 @@ h1 {
 .sticky {
     position: fixed;
     top: 0;
+<<<<<<< HEAD
+    margin: 0 auto 0 auto;
+=======
+>>>>>>> 266f2bc6126ebd7be44b273523e546702e7d7f27
     z-index: 1005;
 }
 

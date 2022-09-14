@@ -5,7 +5,6 @@ var serchbar = document.querySelector('.guestSerchBar');
 // node do array
 var p2List = Array.from(p2NodeList);
 
-
 // array of objects
 let arrayObject = []
 for (let i = 0; i < p2List.length; i++) {
@@ -17,6 +16,21 @@ for (let i = 0; i < p2List.length; i++) {
     }
 }
 
+function centerTables() {
+    let chair = document.getElementsByClassName("checkOn")
+    if (chair.length > 0) {
+        chair = chair.item(0)
+        let tableId = chair.querySelector("p2").id
+        let table = document.getElementById(tableId)
+        chairWidth = chair.offsetWidth
+        table.style.transform = "translateX(-" + chairWidth + "px)"
+    }
+}
+
+
+addEventListener('resize', (event) => {
+    centerTables()
+});
 
 // sortowanie alfabetyczne
 function compare(a, b) {
@@ -86,8 +100,9 @@ function addAtributeSeat(numb, tableNumber) {
     for (let i = 0; i < tables.length; i++) {
         if (tables[i].id != tableNumber || !choosenSit.classList.contains("checkOn")) {
             tables[i].style.display = "none"
-        } else { 
+        } else {
             tables[i].style.display = "grid"
+            centerTables()
         }
     }
     // podswietlanie osoby na liście
@@ -109,11 +124,11 @@ function addAtributeSeat(numb, tableNumber) {
 function underlineMenuItem() {
     var title = document.querySelector('.title');
     var menu = document.querySelector('.menu');
-    if (title.getBoundingClientRect().bottom < 0 ) {
+    if (title.getBoundingClientRect().bottom < 0) {
         menu.classList.add("sticky")
-      } else {
+    } else {
         menu.classList.remove("sticky");
-      }
+    }
 
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
