@@ -607,7 +607,7 @@ p3 {
     z-index: 20;
     border: 2px solid rgb(109, 109, 109);
 
-    padding: 0 10px 10px;
+    padding: 0 10px 10px 10px;
     border-radius: 10px;
     background: linear-gradient(-67deg, rgba(#c8d8e7, .7), rgba(255, 255, 255, .8));
     /* overflow: hidden; */
@@ -621,7 +621,6 @@ p3 {
     position: sticky;
     z-index: 999;
     top: 0;
-    height: 8%;
     
     background-color: #fffde9;
 }
@@ -657,9 +656,12 @@ label input {
 }
 
 .guestSerchBar > input {
+    transform: translateX(-10px);
     border: 1px solid rgb(180, 180, 180);
     border-radius: 4px;
-    width: 100%;
+    width:calc(100% + 20px);
+    font-size:1.4vw;
+    height: 8%;
 }
 
 .labelTitle {
