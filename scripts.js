@@ -53,7 +53,7 @@ serchbar.innerHTML +=
 
 // renderowanie listy
 for (let i = 0; i < arrayObject.length; i++) {
-    if (arrayObject[i].nick.toUpperCase() != "OSOBA TOWARZYSZĄCA") {
+    if (arrayObject[i].nick.toUpperCase() != "OSOBA  TOWARZYSZĄCA") {
         serchbar.innerHTML +=
 
 
