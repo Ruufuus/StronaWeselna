@@ -165,7 +165,8 @@ function createSearchBar() {
 
     // renderowanie listy
     for (let i = 0; i < guestInformations.length; i++) {
-        if (guestInformations[i].nick.toUpperCase() != "OSOBA  TOWARZYSZĄCA") {
+        console.log(guestInformations[i].nick.toUpperCase())
+        if (guestInformations[i].nick.toUpperCase() != "OSOBA TOWARZYSZĄCA") {
             serchbar.innerHTML +=
                 //html code
                 "<label class=\"listElements\" id=\"" +
