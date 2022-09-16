@@ -1,18 +1,132 @@
-// DOM do node
-var p2NodeList = document.querySelectorAll('p2');
-var serchbar = document.querySelector('.guestSerchBar');
+var tablesInfo = JSON.parse(JSON.stringify(guestsInfo))
+let guestInformations = []
+let tableInformations = []
+pageLoad()
 
-// node do array
-var p2List = Array.from(p2NodeList);
+function pageLoad() {
+    createWeedingCountDown()
+    getTablesAndGuestsInfo()
+    createTables()
+    centerTables()
+    sortGuestInformations()
+    createSearchBar()
+    changeModeToTouchScreenDeviceMode()
+}
 
-// array of objects
-let arrayObject = []
-for (let i = 0; i < p2List.length; i++) {
-    arrayObject[i] = {
-        "nick": p2List[i].outerText,
-        "id": "seat" + [(i + 1)],
-        "number": (i + 1),
-        "table": p2List[i].id,
+function createWeedingCountDown() {
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+    var weddingDate = new Date("Sep 24, 2022 16:30:00").getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = weddingDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (day));
+        var hours = Math.floor((distance % (day)) / (hour));
+        var minutes = Math.floor((distance % hour) / (minute));
+        var seconds = Math.floor((distance % (minute)) / second);
+
+        // Output the result
+        if (now < weddingDate) {
+            document.getElementById("days").innerHTML = days + "d";
+            document.getElementById("hours").innerHTML = hours + "h";
+            document.getElementById("minutes").innerHTML = minutes + "m";
+            document.getElementById("seconds").innerHTML = seconds + "s";
+        } else {
+            document.getElementsByClassName("timer-title")[0].innerHTML = "";
+        }
+    }, second);
+}
+
+function getTablesAndGuestsInfo() {
+    tablesInfo.forEach(tableInfo => {
+        var currentTableId = tableInfo.tableID;
+        tableInformations.push(
+            {
+                "tableId": tableInfo.tableID,
+                "tableSize": tableInfo.tableSize
+            }
+        )
+        tableInfo.guestList.forEach(guestInfo => {
+            guestInformations.push(
+                {
+                    "nick": guestInfo.name,
+                    "id": "seat" + guestInfo.id,
+                    "number": guestInfo.id,
+                    "table": currentTableId,
+                }
+            )
+        })
+    });
+}
+
+function createTables() {
+    tableInformations.forEach(tableInformation => {
+        var tableDivHTML = document
+            .getElementById(tableInformation.tableId)
+            .innerHTML
+
+        var tableStyle = 
+        `grid-area: 1 / 2 / ${((tableInformation.tableSize / 2) + 1)} / 4`
+
+        tableDivHTML += 
+        `<div class=\"tableTable table${tableInformation.tableSize} tableText"`+
+        ` style="${tableStyle}">${tableInformation.tableId}</div>`
+        var chairCounter = tableInformation.tableSize
+        guestInformations.forEach(guestInformation => {
+            ({ chairCounter, tableDivHTML } =
+                createChair(guestInformation, tableInformation, chairCounter, tableDivHTML))
+        })
+        table = document.getElementById(tableInformation.tableId)
+        table.innerHTML = tableDivHTML
+
+    })
+
+
+    function createChair(guestInformation, tableInformation, chairCounter, tableDivHTML) {
+        if (guestInformation.table == tableInformation.tableId) {
+            var seat
+            var row 
+            var chairStyle = ""
+            if (chairCounter <= tableInformation.tableSize / 2){
+                seat = "chairRight"
+            }else{
+                var charNumber = tableInformation.tableSize - chairCounter + 1
+                seat = "chairLeft"
+                row = 1
+                chairStyle = `grid-area: ${charNumber} / 1 / ${charNumber+1} / 2`
+            }
+
+
+            var guestNameFormated = () => {
+                resultName = ""
+                nameParts = guestInformation.nick.split(" ")
+                nameParts.forEach(namePart => {
+                    formatName(namePart)
+                })
+                return resultName
+            }
+            tableDivHTML +=
+                `<span class=\"chair ${seat} seatHTML${guestInformation.number}"`+
+                ` style="${chairStyle}"><p2>${guestNameFormated()}</p2></span>`
+            chairCounter -= 1
+        }
+        return { chairCounter, tableDivHTML }
+
+        function formatName(namePart) {
+            if (resultName != "") {
+                resultName += "</br>"
+            }
+            resultName += namePart
+        }
     }
 }
 
@@ -20,70 +134,66 @@ function centerTables() {
     let chair = document.getElementsByClassName("checkOn")
     if (chair.length > 0) {
         chair = chair.item(0)
-        let tableId = chair.querySelector("p2").id
+        let tableId = chair.parentElement.id
         let table = document.getElementById(tableId)
         chairWidth = chair.offsetWidth
         table.style.transform = "translateX(-" + chairWidth + "px)"
     }
 }
 
-
-addEventListener('resize', (event) => {
-    centerTables()
-});
-
-// sortowanie alfabetyczne
-function compare(a, b) {
-    if (a.table < b.table) {
-        return -1;
+function sortGuestInformations() {
+    function compare(a, b) {
+        if (a.table < b.table) {
+            return -1;
+        }
+        if (a.table > b.table) {
+            return 1;
+        }
+        return 0;
     }
-    if (a.table > b.table) {
-        return 1;
-    }
-    return 0;
+    guestInformations.sort(compare);
 }
-arrayObject.sort(compare);
 
-// renderowanie tytułu listy
-serchbar.innerHTML +=
-    "<div class=\"labelTitle\">" +
-    "<span>Imię Nazwisko</span>" +
-    "<span>Stół</span>" +
-    "</div>";
+function createSearchBar() {
+    // renderowanie tytułu listy
+    var serchbar = document.querySelector('.guestSerchBar');
+    serchbar.innerHTML +=
+        "<div class=\"labelTitle\">" +
+        "<span>Imię Nazwisko</span>" +
+        "<span>Stół</span>" +
+        "</div>";
 
-// renderowanie listy
-for (let i = 0; i < arrayObject.length; i++) {
-    if (arrayObject[i].nick.toUpperCase() != "OSOBA  TOWARZYSZĄCA") {
-        serchbar.innerHTML +=
+    // renderowanie listy
+    for (let i = 0; i < guestInformations.length; i++) {
+        if (guestInformations[i].nick.toUpperCase() != "OSOBA  TOWARZYSZĄCA") {
+            serchbar.innerHTML +=
+                //html code
+                "<label class=\"listElements\" id=\"" +
+                guestInformations[i].id + "\"onclick=\"addAtributeSeat(" +
+                guestInformations[i].number + "," + guestInformations[i].table +
+                ")\">" +
 
+                // wyświetlanie imienia i nazwiska
+                "<span class=\"labelNick\">" +
+                guestInformations[i].nick +
+                "</span>" +
 
+                // wyświetlanie nr stołu
+                "<span class=\"" +
+                guestInformations[i].table +
+                "\">" +
+                guestInformations[i].table +
+                "</span>" +
 
-            //html code
-            "<label class=\"listElements\" id=\"" +
-            arrayObject[i].id + "\"onclick=\"addAtributeSeat(" +
-            arrayObject[i].number + "," + arrayObject[i].table +
-            ")\">" +
-
-            // wyświetlanie imienia i nazwiska
-            "<span class=\"labelNick\">" +
-            arrayObject[i].nick +
-            "</span>" +
-
-            // wyświetlanie nr stołu
-            "<span class=\"" +
-            arrayObject[i].table +
-            "\">" +
-            arrayObject[i].table +
-            "</span>" +
-
-            "<br /></label>"
+                "<br /></label>"
+        }
     }
 }
 
 
 function addAtributeSeat(numb, tableNumber) {
     // podswietlanie osoby z listy
-    let seats = [document.getElementsByClassName('chairRight'), document.getElementsByClassName('chairLeft')]
+    let seats = [document.getElementsByClassName('chair')]
     for (let i = 0; i < seats.length; i++) {
         for (let j = 0; j < seats[i].length; j++) {
             if (seats[i][j].classList.contains('seatHTML' + numb)) {
@@ -117,9 +227,6 @@ function addAtributeSeat(numb, tableNumber) {
 }
 
 
-
-
-
 //dodawanie underline do sekcji w której jestesmy
 function underlineMenuItem() {
     var title = document.querySelector('.title');
@@ -129,7 +236,6 @@ function underlineMenuItem() {
     } else {
         menu.classList.remove("sticky");
     }
-
     var sections = document.querySelectorAll(".sectionContainer");
     var menuitems = document.querySelectorAll(".menu-item");
     var menuheight = menu.offsetHeight;
@@ -146,38 +252,6 @@ function underlineMenuItem() {
     }
 }
 
-window.addEventListener("scroll", underlineMenuItem);
-
-const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-var weddingDate = new Date("Sep 24, 2022 16:30:00").getTime();
-// Update the count down every 1 second
-var x = setInterval(function () {
-
-    // Get today's date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = weddingDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (day));
-    var hours = Math.floor((distance % (day)) / (hour));
-    var minutes = Math.floor((distance % hour) / (minute));
-    var seconds = Math.floor((distance % (minute)) / second);
-
-    // Output the result
-    if (now < weddingDate) {
-        document.getElementById("days").innerHTML = days + "d";
-        document.getElementById("hours").innerHTML = hours + "h";
-        document.getElementById("minutes").innerHTML = minutes + "m";
-        document.getElementById("seconds").innerHTML = seconds + "s";
-    } else {
-        document.getElementsByClassName("timer-title")[0].innerHTML = "";
-    }
-}, second);
 
 function find() {
     var inp, filter, i, txtValue;
@@ -205,27 +279,34 @@ function resizemap() {
 
 }
 
-function hasTouch() {
-    return 'ontouchstart' in document.documentElement ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0;
-}
+function changeModeToTouchScreenDeviceMode() {
+    function hasTouch() {
+        return 'ontouchstart' in document.documentElement ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
+    }
+    if (hasTouch()) { // remove all the :hover stylesheets
+        try { // prevent exception on browsers not supporting DOM styleSheets properly
+            for (var si in document.styleSheets) {
+                var styleSheet = document.styleSheets[si];
+                if (!styleSheet.rules) continue;
 
-if (hasTouch()) { // remove all the :hover stylesheets
-    try { // prevent exception on browsers not supporting DOM styleSheets properly
-        for (var si in document.styleSheets) {
-            var styleSheet = document.styleSheets[si];
-            if (!styleSheet.rules) continue;
+                for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                    if (!styleSheet.rules[ri].selectorText) continue;
 
-            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-                if (!styleSheet.rules[ri].selectorText) continue;
-
-                if (styleSheet.rules[ri].selectorText.match(':hover')) {
-                    styleSheet.deleteRule(ri);
+                    if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                        styleSheet.deleteRule(ri);
+                    }
                 }
             }
-        }
-    } catch (ex) { }
+        } catch (ex) { }
+    }
 }
+
+
+window.addEventListener("scroll", underlineMenuItem);
 window.addEventListener('load', resizemap);
-window.addEventListener('resize', resizemap);
+window.addEventListener('resize', (event) => {
+    centerTables(),
+        resizemap()
+});
