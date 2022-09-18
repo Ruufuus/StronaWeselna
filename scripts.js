@@ -1,6 +1,9 @@
 var tablesInfo = JSON.parse(JSON.stringify(guestsInfo))
 let guestInformations = []
 let tableInformations = []
+
+const GUEST_PARTNER_STRING_VALUE = "OSOBA TOWARZYSZĄCA"
+
 pageLoad()
 
 function pageLoad() {
@@ -10,7 +13,8 @@ function pageLoad() {
     centerTables()
     sortGuestInformations()
     createSearchBar()
-    changeModeToTouchScreenDeviceMode()
+    changeModeToTouchScreenDeviceModeIfNeeded()
+    addListeners()
 }
 
 function createWeedingCountDown() {
@@ -58,68 +62,76 @@ function getTablesAndGuestsInfo() {
         tableInfo.guestList.forEach(guestInfo => {
             guestInformations.push(
                 {
-                    "nick": guestInfo.name,
-                    "id": "seat" + guestInfo.id,
-                    "number": guestInfo.id,
-                    "table": currentTableId,
+                    "guestName": guestInfo.name,
+                    "chairId": guestInfo.id,
+                    "chairTableId": currentTableId,
                 }
             )
         })
     });
+    guestInformations.sort((a, b) => {
+        if (a.chairTableId < b.chairTableId) {
+            return -1
+        } else {
+            if (a.chairTableId == b.chairTableId && a.chairId < b.chairId) {
+                return -1
+            }
+            return 1
+        }
+    })
+    console.log(guestInformations)
 }
+
 
 function createTables() {
     tableInformations.forEach(tableInformation => {
+        var tableContainer = document.getElementById("tableContainer")
+        tableContainer.innerHTML += `<div class="guestTable table" id="table_${tableInformation.tableId}"></div>`
         var tableDivHTML = document
-            .getElementById(tableInformation.tableId)
+            .getElementById(`table_${tableInformation.tableId}`)
             .innerHTML
 
-        var tableStyle = 
-        `grid-area: 1 / 2 / ${((tableInformation.tableSize / 2) + 1)} / 4`
+        var tableStyle =
+            `grid-area: 1 / 2 / ${((tableInformation.tableSize / 2) + 1)} / 4`
 
-        tableDivHTML += 
-        `<div class=\"tableTable table${tableInformation.tableSize} tableText"`+
-        ` style="${tableStyle}">${tableInformation.tableId}</div>`
-        var chairCounter = tableInformation.tableSize
+        tableDivHTML +=
+            `<div class=\"tableTable tableText"` +
+            ` style="${tableStyle}">${tableInformation.tableId}</div>`
         guestInformations.forEach(guestInformation => {
-            ({ chairCounter, tableDivHTML } =
-                createChair(guestInformation, tableInformation, chairCounter, tableDivHTML))
+            (tableDivHTML =
+                createChair(guestInformation, tableInformation, tableDivHTML))
         })
-        table = document.getElementById(tableInformation.tableId)
+        table = document.getElementById(`table_${tableInformation.tableId}`)
         table.innerHTML = tableDivHTML
 
     })
 
 
-    function createChair(guestInformation, tableInformation, chairCounter, tableDivHTML) {
-        if (guestInformation.table == tableInformation.tableId) {
+    function createChair(guestInformation, tableInformation, tableDivHTML) {
+        if (guestInformation.chairTableId == tableInformation.tableId) {
             var seat
-            var row 
             var chairStyle = ""
-            if (chairCounter <= tableInformation.tableSize / 2){
+            if (guestInformation.chairId > tableInformation.tableSize / 2) {
                 seat = "chairRight"
-            }else{
-                var charNumber = tableInformation.tableSize - chairCounter + 1
+            } else {
                 seat = "chairLeft"
-                row = 1
-                chairStyle = `grid-area: ${charNumber} / 1 / ${charNumber+1} / 2`
+                chairStyle = `grid-area: ${guestInformation.chairId} / 1 / ${guestInformation.chairId + 1} / 2`
             }
 
 
             var guestNameFormated = () => {
                 resultName = ""
-                nameParts = guestInformation.nick.split(" ")
+                nameParts = guestInformation.guestName.split(" ")
                 nameParts.forEach(namePart => {
                     formatName(namePart)
                 })
                 return resultName
             }
             tableDivHTML +=
-                `<span class=\"chair ${seat} seatHTML${guestInformation.number}"`+
+                `<span class=\"chair ${seat}" id="table_${guestInformation.chairTableId}_seat_${guestInformation.chairId}"` +
                 ` style="${chairStyle}"><p2>${guestNameFormated()}</p2></span>`
-            chairCounter -= 1
         }
-        return { chairCounter, tableDivHTML }
+        return tableDivHTML
 
         function formatName(namePart) {
             if (resultName != "") {
@@ -165,67 +177,61 @@ function createSearchBar() {
 
     // renderowanie listy
     for (let i = 0; i < guestInformations.length; i++) {
-        console.log(guestInformations[i].nick.toUpperCase())
-        if (guestInformations[i].nick.toUpperCase() != "OSOBA TOWARZYSZĄCA") {
+        if (guestInformations[i].guestName.toUpperCase() != GUEST_PARTNER_STRING_VALUE) {
             serchbar.innerHTML +=
                 //html code
-                "<label class=\"listElements\" id=\"" +
-                guestInformations[i].id + "\"onclick=\"addAtributeSeat(" +
-                guestInformations[i].number + "," + guestInformations[i].table +
-                ")\">" +
-
+                `<label class="listElements"`
+                + `id="table_${guestInformations[i].chairTableId}_guest_${guestInformations[i].chairId}"`
+                + `onclick="addAtributeSeat(${guestInformations[i].chairId}, ${guestInformations[i].chairTableId})">`
+                +
                 // wyświetlanie imienia i nazwiska
-                "<span class=\"labelNick\">" +
-                guestInformations[i].nick +
-                "</span>" +
+                `<span class="labelNick">` +
+                `${guestInformations[i].guestName}` +
+                `</span>` +
 
                 // wyświetlanie nr stołu
-                "<span class=\"" +
-                guestInformations[i].table +
-                "\">" +
-                guestInformations[i].table +
-                "</span>" +
+                `<span>` +
+                `${guestInformations[i].chairTableId}` +
+                `</span>` +
 
-                "<br /></label>"
+                `<br /></label>`
         }
     }
 }
 
 
-function addAtributeSeat(numb, tableNumber) {
-    // podswietlanie osoby z listy
-    let seats = [document.getElementsByClassName('chair')]
-    for (let i = 0; i < seats.length; i++) {
-        for (let j = 0; j < seats[i].length; j++) {
-            if (seats[i][j].classList.contains('seatHTML' + numb)) {
-                seats[i][j].classList.toggle("checkOn");
-            } else {
-                seats[i][j].classList.remove("checkOn");
-            }
-        }
+
+function addAtributeSeat(chairId, tableId) {
+    let chairs = document.getElementsByClassName("chair")
+    for (let i = 0; i < chairs.length; i++) {
+        chairs[i].id != `table_${tableId}_seat_${chairId}`
+            ? chairs[i].classList.remove("checkOn")
+            : chairs[i].classList.toggle("checkOn")
     }
-    let tables = document
-        .getElementsByClassName("table")
-    let choosenSit = document
-        .getElementsByClassName('seatHTML' + numb).item(0)
+
+    let choosenGuestChair = document.getElementById(`table_${tableId}_seat_${chairId}`)
+    let tables = document.getElementsByClassName("table")
     for (let i = 0; i < tables.length; i++) {
-        if (tables[i].id != tableNumber || !choosenSit.classList.contains("checkOn")) {
-            tables[i].style.display = "none"
-        } else {
-            tables[i].style.display = "grid"
+        tables[i].style.display = (tables[i].id != `table_${tableId}`
+            || !choosenGuestChair.classList.contains("checkOn"))
+            ? "none"
+            : "grid"
+        if (tables[i].style.display == "grid") {
             centerTables()
         }
     }
-    // podswietlanie osoby na liście
-    var listElements = document.getElementsByClassName("listElements")
-    for (let i = 0; i < listElements.length; i++) {
-        if (listElements[i].id == "seat" + numb) {
-            listElements[i].classList.toggle('labelBackground')
-        } else {
-            listElements[i].classList.remove('labelBackground');
-        }
+
+    let guestListElements = document.getElementsByClassName("listElements")
+    for (let i = 0; i < guestListElements.length; i++) {
+        guestListElements[i].id == `table_${tableId}_guest_${chairId}`
+            ? guestListElements[i].classList.toggle("labelBackground")
+            : guestListElements[i].classList.remove("labelBackground")
     }
+
 }
+
+
+
 
 
 //dodawanie underline do sekcji w której jestesmy
@@ -254,7 +260,7 @@ function underlineMenuItem() {
 }
 
 
-function find() {
+function findGuest() {
     var inp, filter, i, txtValue;
     inp = document.getElementById("myInput");
     filter = inp.value.toUpperCase();
@@ -270,7 +276,7 @@ function find() {
 }
 
 //zmiana wysokości mapki
-function resizemap() {
+function resizeMap() {
     var churimg = document.getElementsByClassName("church");
     var churimgheight = churimg[0].height;
     document.getElementById("church-map").height = churimgheight;
@@ -280,7 +286,7 @@ function resizemap() {
 
 }
 
-function changeModeToTouchScreenDeviceMode() {
+function changeModeToTouchScreenDeviceModeIfNeeded() {
     function hasTouch() {
         return 'ontouchstart' in document.documentElement ||
             navigator.maxTouchPoints > 0 ||
@@ -305,9 +311,11 @@ function changeModeToTouchScreenDeviceMode() {
 }
 
 
-window.addEventListener("scroll", underlineMenuItem);
-window.addEventListener('load', resizemap);
-window.addEventListener('resize', (event) => {
-    centerTables(),
-        resizemap()
-});
+function addListeners() {
+    window.addEventListener("scroll", underlineMenuItem);
+    window.addEventListener('load', resizeMap);
+    window.addEventListener('resize', (event) => {
+        centerTables(),
+            resizeMap()
+    });
+}
